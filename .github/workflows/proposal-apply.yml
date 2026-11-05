@@ -1,0 +1,50 @@
+name: Apply proposals
+
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  apply:
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'approved'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    # Job-level, shared with the pipeline's sync job; released before the pipeline is called.
+    concurrency:
+      group: write-additional
+      cancel-in-progress: false
+    outputs:
+      applied: ${{ steps.apply.outputs.applied }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Apply approved proposals
+        id: apply
+        run: pnpm exec tsx scripts/proposal/apply.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Pushes made with GITHUB_TOKEN don't trigger workflows, so call the pipeline directly.
+  pipeline:
+    needs: apply
+    if: needs.apply.outputs.applied == 'true'
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      discussions: read
+    uses: ./.github/workflows/pipeline.yml
+    secrets: inherit

@@ -10,6 +10,7 @@
 	import FacetPanel from '#lib/components/FacetPanel.svelte';
 	import FilterChips from '#lib/components/FilterChips.svelte';
 	import RowDetail from '#lib/components/RowDetail.svelte';
+	import RowProposals from '#lib/components/RowProposals.svelte';
 	import SearchBar from '#lib/components/SearchBar.svelte';
 	import { formatLocalDate, parseCompletionTime } from '#lib/data/dates.ts';
 	import { applyFilters, buildFacets, DEFAULT_FILTERS, type Filters } from '#lib/search/facets.ts';
@@ -23,9 +24,9 @@
 	const ds = $derived(app.ds);
 	const view = $derived(parseViewState(page.url.searchParams));
 
-	// Pending-proposal counts per key (filled in by the proposals feature).
-	const pending = $derived(new Map<string, number>());
-	const pendingKeys = $derived<Set<string> | null>(null);
+	// Pending proposals per key; the facet appears once they've loaded from GitHub.
+	const pending = $derived(new Map([...app.proposalsByKey].map(([k, list]) => [k, list.length])));
+	const pendingKeys = $derived(app.proposals ? new Set(app.proposalsByKey.keys()) : null);
 
 	const facets = $derived(ds ? buildFacets(ds, pendingKeys) : []);
 	const query = $derived(ds ? parseQuery(view.q, ds) : null);
@@ -265,6 +266,7 @@
 		{#if selected !== undefined}
 			<RowDetail {ds} i={selected} {needles} pending={pending.get(view.key) ?? 0} onclose={close}>
 				{#key view.key}
+					<RowProposals {ds} i={selected} proposals={app.proposalsByKey.get(view.key) ?? []} />
 					<Discussion key={view.key} count={ds.discussions[selected]} />
 				{/key}
 			</RowDetail>
