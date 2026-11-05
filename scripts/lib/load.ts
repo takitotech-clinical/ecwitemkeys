@@ -20,9 +20,13 @@ export interface Sources {
 	warnings: Issue[];
 }
 
+/** Source directory; tests point this at a fixture set. */
+const dir = process.env.DATA_SOURCE_DIR ?? 'source';
+const at = (file: string) => file.replace(/^source\//, `${dir}/`);
+
 /** Throws DataError with every error found across all files. */
 export function loadSources(): Sources {
-	const schema = readSchema();
+	const schema = readSchema(at(FILES.schema));
 	const issues: Issue[] = [];
 	const attempt = <T>(f: () => T): T | null => {
 		try {
@@ -33,9 +37,9 @@ export function loadSources(): Sources {
 			return null;
 		}
 	};
-	const additionalText = readText(FILES.additional);
-	const archiveText = attempt(() => readText(FILES.archive));
-	const ik = attempt(() => readItemkeysExport(readText(FILES.itemkeys)));
+	const additionalText = readText(at(FILES.additional));
+	const archiveText = attempt(() => readText(at(FILES.archive)));
+	const ik = attempt(() => readItemkeysExport(readText(at(FILES.itemkeys))));
 	const add = attempt(() => readAdditional(additionalText, schema));
 	const arc = archiveText === null ? null : attempt(() => readItemkeysArchive(archiveText));
 	for (const r of [ik, add, arc]) if (r) issues.push(...r.warnings);

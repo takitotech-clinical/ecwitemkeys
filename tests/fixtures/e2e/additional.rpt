@@ -1,0 +1,32 @@
+﻿key`added`expired`description`category
+10eLoginPageContent`2026-11-04T14:00:00Z```
+277CA_RejectionPriority`2026-11-04T14:00:00Z```
+277CA_Split_By_Practice`2026-11-04T14:00:00Z```
+ANSI`2026-11-04T14:00:00Z```
+ANSI_NewKey`2026-12-01T15:00:00Z```
+ANSI_CPTLevelAssignmentImplemented`2026-11-04T14:00:00Z`2026-12-01T15:00:00Z``
+ANSI_SendFirstDxOnlyForAllPayers`2026-11-04T14:00:00Z```
+ANSI5010`2026-11-04T14:00:00Z```
+CCMRDisplayAdditionalSignatureOnPN`2026-11-04T14:00:00Z```
+DataPortabilityZipSplitEnabled`2026-11-04T14:00:00Z```
+edi-default-AcceptAssignment`2026-11-04T14:00:00Z```
+edi_270_UsePrBillingFacAddrAndPrNumbersIn2100B`2026-11-04T14:00:00Z```
+edi_997Trans_LogInfo`2026-11-04T14:00:00Z```
+edi_considerLatestCPTPmt4ClaimBatches`2026-11-04T14:00:00Z```
+enable_santovia_pe`2026-11-04T14:00:00Z```
+EnableCentralizedScheduling`2026-11-04T14:00:00Z```
+EnableHL7IDUpdate`2026-11-04T14:00:00Z```
+EnableMultipleCPTForNYVehicleForm`2026-11-04T14:00:00Z```
+HPI`2026-11-04T14:00:00Z``Progress Note HPI category.
+Do not change the Item ID.`system
+HPINotes`2026-11-04T14:00:00Z```
+HPIExtra`2026-12-01T15:00:00Z```
+MIPS_MigrateSettings_2021 `2026-11-04T14:00:00Z```
+MIPS_MigrateSettings_2022 `2026-11-04T14:00:00Z```
+MIPS_MigrateSettings_2023 `2026-11-04T14:00:00Z```
+santovia_printid`2026-11-04T14:00:00Z```
+UnlockPNWithinCertainHours`2026-11-04T14:00:00Z```
+verifyHistory`2026-11-04T14:00:00Z```
+zopariPassword`2026-11-04T14:00:00Z```
+zopariUName`2026-11-04T14:00:00Z```
+zopariUrl`2026-11-04T14:00:00Z`2026-12-01T15:00:00Z``

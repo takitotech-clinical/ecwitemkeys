@@ -7,8 +7,10 @@ export default defineConfig({
 	retries: process.env.CI ? 1 : 0,
 	use: { baseURL: 'http://localhost:4173' },
 	webServer: {
-		// Built at the root path so tests don't need to know the Pages base path.
-		command: 'BASE_PATH= pnpm build && BASE_PATH= pnpm preview --port 4173 --strictPort',
+		// Built at the root path from the fixture dataset (tests/fixtures/e2e), which has expired
+		// and newly added keys.
+		command:
+			'BASE_PATH= DATA_SOURCE_DIR=tests/fixtures/e2e pnpm build && BASE_PATH= pnpm preview --port 4173 --strictPort',
 		port: 4173,
 		reuseExistingServer: !process.env.CI,
 		timeout: 180_000

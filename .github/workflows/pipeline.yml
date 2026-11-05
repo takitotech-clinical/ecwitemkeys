@@ -1,0 +1,108 @@
+# Sync → build → deploy (PLAN §8). Every path into the site goes through here.
+name: Pipeline
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    # Shared with proposal-apply so additional.rpt is never written concurrently.
+    concurrency:
+      group: write-additional
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Sync itemkeys export
+        id: sync
+        run: pnpm data:sync --previous-ref "$PREVIOUS_REF"
+        env:
+          # The export before this push; for other triggers HEAD (nothing new to archive).
+          PREVIOUS_REF: ${{ github.event_name == 'push' && github.event.before || 'HEAD' }}
+      - name: Commit and push
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          export_sha=$(git log -1 --format=%H -- source/itemkeys.rpt)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add source/additional.rpt source/itemkeys.expired.rpt
+          git commit -m "$MESSAGE"
+          git push origin HEAD:main
+          sync_sha=$(git rev-parse HEAD)
+          {
+            echo ''
+            echo '### Undo this export'
+            echo 'Revert both the export commit and this sync commit in one push:'
+            echo '```'
+            echo "git revert --no-edit $sync_sha $export_sha"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+        env:
+          MESSAGE: ${{ steps.sync.outputs.message }}
+
+  build:
+    needs: sync
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      discussions: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm check
+      - run: pnpm test
+      - name: Build data (with discussion counts)
+        run: pnpm data:build --strict
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build site
+        run: pnpm exec vite build
+        env:
+          BASE_PATH: /ecwitemkeys
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
