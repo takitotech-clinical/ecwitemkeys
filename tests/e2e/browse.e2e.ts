@@ -59,7 +59,7 @@ test.describe('dates in the browser timezone', () => {
 test('deep links restore the selected key, including a trailing space', async ({ page }) => {
 	await page.goto('/?key=MIPS_MigrateSettings_2022+');
 	const dialog = page.getByRole('dialog');
-	await expect(dialog.getByRole('heading')).toHaveText('MIPS_MigrateSettings_2022 ');
+	await expect(dialog.getByRole('heading', { level: 2 })).toHaveText('MIPS_MigrateSettings_2022 ');
 	await expect(dialog.getByText('␣ trailing space in key')).toBeVisible();
 	await dialog.getByRole('button', { name: 'Close details' }).click();
 	await expect(page).not.toHaveURL(/key=/);
@@ -85,7 +85,9 @@ test('keyboard: / focuses search, arrows move, Enter opens, Escape closes', asyn
 	await expect(page.getByText('4 of 30 keys')).toBeVisible();
 	await page.keyboard.press('ArrowDown');
 	await page.keyboard.press('Enter');
-	await expect(page.getByRole('dialog').getByRole('heading')).toHaveText('ANSI_NewKey');
+	await expect(page.getByRole('dialog').getByRole('heading', { level: 2 })).toHaveText(
+		'ANSI_NewKey'
+	);
 	await page.keyboard.press('Escape');
 	await expect(page.getByRole('dialog')).toHaveCount(0);
 });

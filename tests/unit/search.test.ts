@@ -1,38 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import type { ItemsBundle } from '../../src/lib/data/join.ts';
 import { buildDataset, type Dataset } from '../../src/lib/data/model.ts';
 import { applyFilters, buildFacets, DEFAULT_FILTERS, EMPTY } from '../../src/lib/search/facets.ts';
 import { normalize } from '../../src/lib/search/normalize.ts';
 import { matchQuery, parseQuery, rankResults } from '../../src/lib/search/search.ts';
 import { sortResults } from '../../src/lib/search/sort.ts';
 import { parseViewState, viewStateToSearch } from '../../src/lib/state/url-state.ts';
-import { schema } from './helpers.ts';
+import { bundle } from './helpers.ts';
 
 const T0 = '2026-11-04T14:00:00Z';
 const T1 = '2026-12-01T15:00:00Z';
-
-export function bundle(rows: (string | null)[][], extra: Partial<ItemsBundle> = {}): ItemsBundle {
-	return {
-		generatedAt: T1,
-		exportedAt: null,
-		itemkeysColumns: ['key', 'support_remarks', 'display_name'],
-		additionalSchema: schema,
-		rows,
-		lastKnown: [],
-		discussions: {},
-		lastSync: null,
-		newAt: null,
-		diagnostics: {
-			collisions: [],
-			whitespaceKeys: [],
-			whitespaceValues: [],
-			multilineValues: [],
-			expiredWithoutLastKnown: [],
-			syncState: { missingActiveRow: [], activeNotInItemkeys: [] }
-		},
-		...extra
-	};
-}
 
 //            key                 remarks                              display   added expired desc  category
 const ROWS: (string | null)[][] = [

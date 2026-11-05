@@ -5,7 +5,7 @@
 	--bg-active: #e3ebfa;
 	--fg: #1b1f24;
 	--fg-muted: #5c6670;
-	--fg-faint: #8a939c;
+	--fg-faint: #687079;
 	--border: #d9dee3;
 	--accent: #2257c5;
 	--accent-fg: #ffffff;
@@ -14,7 +14,7 @@
 	--warn: #9a5b00;
 	--danger: #b42318;
 	--badge-new: #1d7a3e;
-	--badge-expired: #8a939c;
+	--badge-expired: #687079;
 	--shadow: 0 8px 28px rgb(0 0 0 / 0.14);
 	--radius: 6px;
 	--font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -30,7 +30,7 @@
 		--bg-active: #1f3155;
 		--fg: #e6e9ec;
 		--fg-muted: #a3acb5;
-		--fg-faint: #78828c;
+		--fg-faint: #8f99a3;
 		--border: #343a41;
 		--accent: #7ba4f7;
 		--accent-fg: #0d1117;
@@ -39,7 +39,7 @@
 		--warn: #e3a64a;
 		--danger: #f27a6f;
 		--badge-new: #5cc685;
-		--badge-expired: #78828c;
+		--badge-expired: #8f99a3;
 		--shadow: 0 8px 28px rgb(0 0 0 / 0.5);
 		color-scheme: dark;
 	}

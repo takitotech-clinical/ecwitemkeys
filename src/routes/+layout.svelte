@@ -12,7 +12,7 @@
 
 	const nav = [
 		{ href: resolve('/'), label: 'Browse', id: '/' },
-		{ href: resolve('/health'), label: 'Data health', id: '/health' },
+		{ href: resolve('/health'), label: 'Health', id: '/health' },
 		{ href: resolve('/review'), label: 'Review', id: '/review' },
 		{ href: resolve('/about'), label: 'About', id: '/about' }
 	] as const;
@@ -93,6 +93,16 @@
 		color: var(--accent);
 		padding: 0;
 		text-decoration: underline;
+	}
+	@media (max-width: 600px) {
+		header {
+			gap: 0.5rem;
+			padding-left: 0.6rem;
+			padding-right: 0.6rem;
+		}
+		nav a {
+			padding: 0.2rem 0.4rem;
+		}
 	}
 	main {
 		flex: 1;

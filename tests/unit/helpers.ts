@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import type { ItemsBundle } from '../../src/lib/data/join.ts';
 import type { Schema } from '../../src/lib/data/schema.ts';
 
 export const fixture = (name: string) => readFileSync(`tests/fixtures/${name}`, 'utf8');
@@ -15,4 +16,28 @@ export function exportText(rows: string[][], header = ['key', 'support_remarks',
 export function rptText(header: string[], rows: string[][], eol = '\r\n', bom = true) {
 	const lines = [header, ...rows].map((r) => r.join('`').replace(/\n/g, eol));
 	return (bom ? '\uFEFF' : '') + lines.join(eol) + eol;
+}
+
+/** A data bundle around the given rows. */
+export function bundle(rows: (string | null)[][], extra: Partial<ItemsBundle> = {}): ItemsBundle {
+	return {
+		generatedAt: '2026-12-01T15:00:00Z',
+		exportedAt: null,
+		itemkeysColumns: ['key', 'support_remarks', 'display_name'],
+		additionalSchema: schema,
+		rows,
+		lastKnown: [],
+		discussions: {},
+		lastSync: null,
+		newAt: null,
+		diagnostics: {
+			collisions: [],
+			whitespaceKeys: [],
+			whitespaceValues: [],
+			multilineValues: [],
+			expiredWithoutLastKnown: [],
+			syncState: { missingActiveRow: [], activeNotInItemkeys: [] }
+		},
+		...extra
+	};
 }

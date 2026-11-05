@@ -187,6 +187,7 @@
 		</aside>
 
 		<section class="results" aria-label="Results">
+			<h1 class="sr-only">eCW item keys</h1>
 			<div class="toolbar">
 				<SearchBar bind:value={qInput} bind:input={searchInput} />
 				<button class="btn filters-btn" onclick={() => (filtersOpen = true)}>
