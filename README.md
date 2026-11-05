@@ -163,3 +163,8 @@ pnpm lint && pnpm check
 | `proposal-apply.yml`    | `approved` label added, manual            | applies every approved proposal, then the pipeline    |
 | `discussion-sync.yml`   | discussion or comment created or deleted  | reruns the pipeline (debounced) for comment counts    |
 | `labels.yml`            | label definitions changed, manual         | creates or updates the proposal labels                |
+
+## License
+
+The code is released under the [MIT License](LICENSE). The license covers only what TakitoTech
+and contributors wrote. It does not cover data provided by 3rd party companies.
