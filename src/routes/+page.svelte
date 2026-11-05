@@ -41,7 +41,9 @@
 	const selected = $derived(ds && view.key !== null ? ds.keyIndex.get(view.key) : undefined);
 
 	// Columns: show/hide saved per device.
-	let hidden = $state(readPref<string[]>('hiddenColumns', ['expired']));
+	let hidden = $state(
+		readPref<string[]>('hiddenColumns', ['display_name', 'added', 'expired', 'category'])
+	);
 	const visibleColumns = $derived(ds ? ds.columns.filter((c) => !hidden.includes(c.id)) : []);
 	function toggleColumn(id: string) {
 		hidden = hidden.includes(id) ? hidden.filter((h) => h !== id) : [...hidden, id];
