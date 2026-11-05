@@ -1,0 +1,12 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+
+# Miscellaneous
+/static/
+/source/
+/tests/fixtures/
+/build/
+/.svelte-kit/
+PLAN.md
+/.devcontainer/
