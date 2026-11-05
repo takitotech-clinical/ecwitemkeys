@@ -7,8 +7,8 @@
 	"license": "UNLICENSED",
 	"packageManager": "pnpm@12.16.1",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "pnpm data:build && vite dev",
+		"build": "pnpm data:build && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -16,7 +16,14 @@
 		"format": "prettier --write .",
 		"test": "vitest run",
 		"test:unit": "vitest",
-		"test:e2e": "playwright test"
+		"test:e2e": "playwright test",
+		"data:build": "tsx scripts/build-data.ts",
+		"data:check": "tsx scripts/check.ts",
+		"data:sync": "tsx scripts/sync.ts",
+		"data:adopt-additional": "tsx scripts/adopt-additional.ts",
+		"data:add-column": "tsx scripts/columns.ts add",
+		"data:rename-column": "tsx scripts/columns.ts rename",
+		"data:remove-column": "tsx scripts/columns.ts remove"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.14.0",

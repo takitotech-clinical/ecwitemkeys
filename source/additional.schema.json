@@ -1,0 +1,33 @@
+{
+	"version": 2,
+	"columns": [
+		{
+			"id": "added",
+			"label": "Added",
+			"type": "timestamp",
+			"managed": true,
+			"required": true
+		},
+		{
+			"id": "expired",
+			"label": "Expired",
+			"type": "timestamp",
+			"managed": true
+		},
+		{
+			"id": "description",
+			"label": "Description",
+			"type": "text",
+			"multiline": true,
+			"maxLength": 2000,
+			"help": "Plain-language description of what this item key is for."
+		},
+		{
+			"id": "category",
+			"label": "Category",
+			"type": "enum",
+			"values": ["system"],
+			"help": "system = item key the program depends on; do not change."
+		}
+	]
+}

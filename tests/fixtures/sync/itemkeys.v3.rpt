@@ -1,0 +1,16 @@
+﻿key`support_remarks`display_name
+10eFirstKey`sorts first`NULL
+ANSI`By default its itemid is 1`NULL
+ANSI_CPTLevelAssignmentImplemented`This Item Key is no longer used.`NULL
+ANSI_NewKey`new between ANSI_CPT… and ANSI_Send…`NULL
+ANSI_SendFirstDxOnlyForAllPayers`Set the Item ID to "1"`
+ANSI5010`Enable ANSI 5010 claims`NULL
+ANSI5011`new after ANSI5010`NULL
+HPI`HPI category. Do not change`HPI
+HPIExtra`new after HPINotes`
+MIPS_MigrateSettings_2021 `enable migration button 0-Yes, 1-No`NULL
+
+(10 rows affected)
+
+
+Completion time: 2026-12-15T09:00:00.0000000-05:00

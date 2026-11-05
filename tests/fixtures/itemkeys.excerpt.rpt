@@ -1,0 +1,45 @@
+﻿key`support_remarks`display_name
+10eLoginPageContent`This is used to enable login page content`10eLoginPageContent
+277CA_RejectionPriority`Rejection has a highest priority than Acceptance to change the claim status update.`
+277CA_Split_By_Practice`Split 277CA by Enterprise Practice ID`NULL
+ANSI`By deafault its itemid is 1 and possibly code reads itemid column from here`NULL
+ANSI_CPTLevelAssignmentImplemented`This Item Key is no longer used.`NULL
+ANSI_SendFirstDxOnlyForAllPayers`Set the Item ID to "1" if only one ICD Code needs to be submitted in ANSI electronic claims for all payers.`ANSI_SendFirstDxOnlyForAllPayers
+ANSI5010`Enable ANSI 5010 claims`NULL
+CCMRDisplayAdditionalSignatureOnPN`This item key is used to decide if additional signature needs to be displayed on Progress note or not.
+Default value of CCMRDisableObjectives item key is No and possible values are Yes and No.`NULL
+DataPortabilityZipSplitEnabled`Enable multi-part zips when Chef is disabled (yes|no)`NULL
+edi-default-AcceptAssignment`This is the default for most practices.  Only for Dr. Richard Martins practice, we need to change the default`NULL
+edi_270_UsePrBillingFacAddrAndPrNumbersIn2100B`Set value to No per developer`NULL
+edi_997Trans_LogInfo``NULL
+edi_considerLatestCPTPmt4ClaimBatches``
+enable_santovia_pe`Enables Santovia 
+
+Patient Education InfoButton Standard Content`NULL
+EnableCentralizedScheduling`Allows to use modern appointment search screen. ItemId=1, value=yes -> Modern appointment search screen | ItemId=0, value=yes -> Classic screen with the Swith to Modern view Link | value=no -> Classic screen only`NULL
+EnableHL7IDUpdate`Item key name :-EnableHL7IDUpdate
+1:Used to allow visit id updated on external visit number screen from appointment screen
+0:Feature disabled`NULL
+EnableMultipleCPTForNYVehicleForm`To allow more than four cpt in New York Moto vehicle form `To allow more 
+
+than four CPT in New York Moto vehicle form
+HPI`This is simply a category on the Progress Note. Do not change the Item ID.`NULL
+HPINotes`The Item Key is related to Admin > Notes > HPI. If the practice deletes this item accidentally, any data entered can be retrieved based on the Item ID.  It also retains what was initially added.`NULL
+MIPS_MigrateSettings_2021 `enable migration button 0-Yes, 1-No`NULL
+MIPS_MigrateSettings_2022 `enable migration button 0-Yes, 1-No`NULL
+MIPS_MigrateSettings_2023 `enable migration button 0-Yes, 1-No`NULL
+santovia_printid`Santovia Print 
+
+Button HTML ID`NULL
+UnlockPNWithinCertainHours`enable/disable unlock pn option to user based is the current time is within given hours(itemId) from the pn is locked,
+this itemkey overrides the unlockchart security permission, this item key depends on UnlockPNIfClaimNotCreated item key.`NULL
+verifyHistory`Displays a Verify Histories button at the top of the Progress Notes, enabling users 
+to verify all histories at once.`NULL
+zopariPassword`value will be taken as the jopari password`NULL
+zopariUName`value will be taken as the jopari username`NULL
+zopariUrl`value will be taken as the jopari ftp url`NULL
+
+(28 rows affected)
+
+
+Completion time: 2026-11-03T18:06:30.0935360-05:00

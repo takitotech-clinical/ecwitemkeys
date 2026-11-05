@@ -1,0 +1,15 @@
+﻿key`support_remarks`display_name
+ANSI`By default its itemid is 1`NULL
+ANSI_CPTLevelAssignmentImplemented`This Item Key is no longer used.`NULL
+ANSI_SendFirstDxOnlyForAllPayers`Set the Item ID to "1"`
+ANSI5010`Enable ANSI 5010 claims`NULL
+HPI`HPI category. Do not change`HPI
+HPINotes`Notes for HPI
+second line`NULL
+MIPS_MigrateSettings_2021 `enable migration button 0-Yes, 1-No`NULL
+zopariUrl`value will be taken as the jopari ftp url`NULL
+
+(8 rows affected)
+
+
+Completion time: 2026-11-03T18:06:30.0935360-05:00
