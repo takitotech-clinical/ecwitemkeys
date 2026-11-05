@@ -89,3 +89,17 @@ test('keyboard: / focuses search, arrows move, Enter opens, Escape closes', asyn
 	await page.keyboard.press('Escape');
 	await expect(page.getByRole('dialog')).toHaveCount(0);
 });
+
+test('row detail has a discussion section (giscus placeholder until configured)', async ({
+	page
+}) => {
+	await page.route('https://giscus.app/**', (route) => route.abort());
+	await page.goto('/?key=HPI');
+	const dialog = page.getByRole('dialog');
+	await dialog.getByRole('heading', { name: /Discussion/ }).scrollIntoViewIfNeeded();
+	await expect(
+		dialog.getByTestId('giscus-placeholder').or(dialog.getByTestId('giscus'))
+	).toBeVisible();
+	const link = dialog.getByRole('link', { name: 'Open discussions on GitHub' });
+	await expect(link).toHaveAttribute('href', /discussions_q=in%3Atitle%20key%3A%22HPI%22/);
+});

@@ -1,0 +1,24 @@
+# Rebuilds the site so discussion comment counts stay current (PLAN §5). Bursts of comments are
+# debounced by cancel-in-progress; the pipeline's nightly run catches anything missed.
+name: Discussion sync
+
+on:
+  discussion:
+    types: [created, deleted, edited]
+  discussion_comment:
+    types: [created, deleted]
+
+concurrency:
+  group: discussion-sync
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  discussions: read
+
+jobs:
+  pipeline:
+    uses: ./.github/workflows/pipeline.yml
+    secrets: inherit

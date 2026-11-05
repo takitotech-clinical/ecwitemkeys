@@ -6,6 +6,7 @@
 	import CardList from '#lib/components/CardList.svelte';
 	import ChangesSummary from '#lib/components/ChangesSummary.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
+	import Discussion from '#lib/components/Discussion.svelte';
 	import FacetPanel from '#lib/components/FacetPanel.svelte';
 	import FilterChips from '#lib/components/FilterChips.svelte';
 	import RowDetail from '#lib/components/RowDetail.svelte';
@@ -262,7 +263,11 @@
 
 	{#if view.key !== null}
 		{#if selected !== undefined}
-			<RowDetail {ds} i={selected} {needles} pending={pending.get(view.key) ?? 0} onclose={close} />
+			<RowDetail {ds} i={selected} {needles} pending={pending.get(view.key) ?? 0} onclose={close}>
+				{#key view.key}
+					<Discussion key={view.key} count={ds.discussions[selected]} />
+				{/key}
+			</RowDetail>
 		{:else}
 			<div class="notfound" role="alert">
 				No item key {JSON.stringify(view.key)}.
