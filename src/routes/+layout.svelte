@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '#lib/assets/favicon.svg';
+	import takitotechLogo from '#lib/assets/takitotech.svg';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { app } from '#lib/state/app.svelte.ts';
@@ -39,6 +40,16 @@
 	<main>
 		{@render children()}
 	</main>
+	<footer>
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
+		<a href="https://takitotech.com" target="_blank" rel="noopener">
+			<span class="powered">Powered by</span>
+			<img src={takitotechLogo} alt="" width="22" height="22" />
+			<span class="wordmark">takito<span class="tech">tech</span></span>
+			<span class="sep" aria-hidden="true">·</span>
+			<span class="domain">takitotech.com</span>
+		</a>
+	</footer>
 </div>
 
 <style>
@@ -108,5 +119,66 @@
 		flex: 1;
 		min-height: 0;
 		overflow: auto;
+	}
+	footer {
+		flex: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: var(--footer-h);
+		padding: 0 max(1rem, env(safe-area-inset-right)) env(safe-area-inset-bottom, 0px)
+			max(1rem, env(safe-area-inset-left));
+		border-top: 1px solid var(--border);
+		background: var(--bg-soft);
+		font-size: 13px;
+	}
+	footer a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		min-height: 2rem;
+		padding: 0 0.6rem;
+		border-radius: 999px;
+		color: var(--fg-muted);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	footer a:hover {
+		background: var(--bg-hover);
+	}
+	footer a:hover .domain {
+		text-decoration: underline;
+	}
+	footer img {
+		display: block;
+	}
+	.wordmark {
+		font-size: 15px;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		color: var(--fg);
+	}
+	.tech {
+		color: var(--brand);
+	}
+	.sep {
+		color: var(--fg-faint);
+	}
+	.domain {
+		color: var(--accent);
+	}
+	@media (max-width: 380px) {
+		footer {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			font-size: 12px;
+		}
+		footer a {
+			gap: 0.3rem;
+			padding: 0 0.4rem;
+		}
+		.wordmark {
+			font-size: 14px;
+		}
 	}
 </style>

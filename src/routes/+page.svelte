@@ -382,7 +382,7 @@
 	}
 	.notfound {
 		position: fixed;
-		bottom: 1rem;
+		bottom: calc(var(--footer-h) + 1rem);
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 30;
@@ -400,7 +400,7 @@
 		.sidebar {
 			display: none;
 			position: fixed;
-			inset: 0;
+			inset: 0 0 var(--footer-h);
 			z-index: 25;
 			width: auto;
 			background: var(--bg);

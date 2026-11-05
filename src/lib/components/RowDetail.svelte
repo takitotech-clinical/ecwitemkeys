@@ -94,7 +94,7 @@
 <style>
 	.backdrop {
 		position: fixed;
-		inset: 0;
+		inset: 0 0 var(--footer-h);
 		background: rgb(0 0 0 / 0.25);
 		z-index: 20;
 	}
@@ -103,12 +103,12 @@
 		z-index: 21;
 		top: 0;
 		right: 0;
-		bottom: 0;
+		bottom: var(--footer-h);
 		width: min(560px, 100vw);
 		background: var(--bg);
 		box-shadow: var(--shadow);
 		overflow: auto;
-		padding: max(1rem, env(safe-area-inset-top)) 1.25rem max(2rem, env(safe-area-inset-bottom));
+		padding: max(1rem, env(safe-area-inset-top)) 1.25rem 2rem;
 	}
 	@media (max-width: 899px) {
 		.backdrop {
