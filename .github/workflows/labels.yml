@@ -1,0 +1,30 @@
+# Keeps the proposal labels in the repository (an issue form drops labels that don't exist).
+name: Labels
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - src/lib/config.ts
+      - scripts/labels.ts
+      - .github/workflows/labels.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm labels
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

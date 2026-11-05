@@ -40,7 +40,7 @@ run(async () => {
 	}
 	await setLabels(
 		number,
-		[valid ? LABELS.valid : LABELS.invalid],
+		[LABELS.proposal, valid ? LABELS.valid : LABELS.invalid],
 		[valid ? LABELS.invalid : LABELS.valid]
 	);
 	await upsertComment(number, VALIDATE_MARKER, comment);

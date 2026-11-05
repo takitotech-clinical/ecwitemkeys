@@ -24,7 +24,7 @@
 		"data:add-column": "tsx scripts/columns.ts add",
 		"data:rename-column": "tsx scripts/columns.ts rename",
 		"data:remove-column": "tsx scripts/columns.ts remove",
-		"gh:labels": "bash scripts/gh-labels.sh"
+		"labels": "tsx scripts/labels.ts"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.14.0",

@@ -71,16 +71,21 @@ marked expired instead of removed.
 
 ### Review proposals
 
-- Open **Review** in the app and paste a fine-grained personal access token: repository
-  `takitotech-clinical/ecwitemkeys` only, _Issues: read and write_, _Metadata: read_, and an
-  expiry of 90 days or less. The token stays in that browser's localStorage. Use
-  **Forget token** on shared devices.
-- **Approve** adds the `approved` label. The **Apply proposals** workflow then re-checks the
-  approver (they must be in `config/approvers.json` and have Triage access or higher),
-  re-validates, commits `Apply #N: …`, closes the issue, and redeploys. **Bulk approve**
-  produces one commit.
-- **Reject** needs a reason. It comments, labels the issue `rejected` and closes it.
-- You can also add the `approved` label directly on GitHub (web or mobile).
+Approvers are the logins in `config/approvers.json`: the repository owner
+(`takitotech-clinical`) and `TriStarGodAI`.
+
+- **Without a token:** open **Review** in the app (or the issue list on GitHub), click
+  **Approve on GitHub** and add the `approved` label to the issue (web or mobile). To reject,
+  comment with the reason and close the issue as _not planned_.
+- **With a token (optional):** paste a fine-grained personal access token in **Review** to
+  approve and reject from the app. Limit it to the `takitotech-clinical/ecwitemkeys` repository,
+  with _Issues: read and write_, _Metadata: read_ and an expiry of 90 days or less. The token
+  stays in that browser's localStorage. Use **Forget token** on shared devices. **Bulk approve**
+  produces one commit, and **Reject** needs a reason. It comments, labels the issue `rejected`
+  and closes it.
+- Either way, the **Apply proposals** workflow re-checks the approver. They must be in
+  `config/approvers.json` and have Triage access or higher. The workflow then re-validates,
+  commits `Apply #N: …`, closes the issue and redeploys.
 
 **Conflicts.** Every proposal records a hash of the value the proposer saw. If the field has
 changed since then, the queue marks the proposal _stale_ and the apply workflow labels it
@@ -94,7 +99,7 @@ Add their GitHub login to `config/approvers.json` and invite them as a collabora
 
 ### Rotate the review token
 
-Create a new fine-grained token as described above, then open **Review** → **Forget token** and
+Only needed if you use one. Create a new fine-grained token as described above, then open **Review** → **Forget token** and
 paste the new one. Revoke the old token on GitHub. Set a reminder before it expires.
 
 ### Change columns or category values
@@ -114,15 +119,18 @@ renamed or removed.
 ### One-time GitHub setup
 
 1. Push to `takitotech-clinical/ecwitemkeys` and make the repository public.
-2. **Settings → Pages → Source:** _GitHub Actions_.
+2. **Settings → Pages → Source:** _GitHub Actions_. Until this is set, the **Pipeline** workflow
+   fails at _configure-pages_ and nothing is deployed. Then rerun it from **Actions → Pipeline →
+   Run workflow**.
 3. **Settings → Actions → Workflow permissions:** _Read and write_.
 4. **Discussions:** enable them, create an **Item keys** category (open-ended discussion), and
    install the [giscus app](https://github.com/apps/giscus). Copy the `repo-id` and
    `category-id` from [giscus.app](https://giscus.app) into `GISCUS` in `src/lib/config.ts`.
    Until then, key details link to GitHub Discussions instead of embedding them.
-5. **Labels:** `pnpm gh:labels` (requires an authenticated `gh` CLI).
-6. **Approvers:** `config/approvers.json` (currently `["TriStarGodAI"]`).
-7. **Review token:** see _Review proposals_ above.
+5. **Labels:** the **Labels** workflow creates them on the first push. If they're missing, run it
+   from **Actions → Labels → Run workflow**. The label definitions are `LABEL_STYLES` in
+   `src/lib/config.ts`.
+6. **Approvers:** `config/approvers.json` (currently the owner and `TriStarGodAI`).
 
 ## Development
 
@@ -154,3 +162,4 @@ pnpm lint && pnpm check
 | `proposal-validate.yml` | proposal issue opened, edited or reopened | labels `proposal:valid`/`invalid` and one bot comment |
 | `proposal-apply.yml`    | `approved` label added, manual            | applies every approved proposal, then the pipeline    |
 | `discussion-sync.yml`   | discussion or comment created or deleted  | reruns the pipeline (debounced) for comment counts    |
+| `labels.yml`            | label definitions changed, manual         | creates or updates the proposal labels                |

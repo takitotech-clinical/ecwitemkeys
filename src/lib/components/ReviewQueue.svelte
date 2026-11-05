@@ -228,8 +228,14 @@
 			>
 		</p>
 	{:else}
+		<p>
+			<strong>Approvers don't need a token.</strong> Open a proposal on GitHub and add the
+			<span class="mono">{LABELS.approved}</span> label; the apply Action commits it. The repository
+			owner and everyone in <span class="mono">config/approvers.json</span> can approve.
+		</p>
 		<p class="help">
-			Paste a <strong>fine-grained personal access token</strong> limited to the
+			To approve and reject from this page instead, paste a
+			<strong>fine-grained personal access token</strong> limited to the
 			<span class="mono">takitotech-clinical/ecwitemkeys</span> repository with
 			<em>Issues: read and write</em> and <em>Metadata: read</em>, expiring in 90 days or less. It
 			is stored in this browser only (localStorage). Anyone with access to this device and browser
@@ -253,7 +259,6 @@
 			<button class="btn primary" type="submit">Save token</button>
 		</form>
 		{#if authError}<p class="error" role="alert">{authError}</p>{/if}
-		<p class="help">Without a token you can still read the queue.</p>
 	{/if}
 </section>
 
@@ -370,6 +375,11 @@
 								}}>Reject…</button
 							>
 						{/if}
+					</div>
+				{:else if !login && approvable(r)}
+					<div class="actions">
+						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
+						<a class="btn" href={r.p.url} target="_blank" rel="noopener">Approve on GitHub</a>
 					</div>
 				{/if}
 			</li>

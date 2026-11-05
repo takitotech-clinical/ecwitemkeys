@@ -100,6 +100,22 @@ test('review queue: diffs, stale warnings, approve and reject against a mocked G
 	);
 });
 
+test('without a token, approvable proposals link to GitHub for approval', async ({ page }) => {
+	await page.route('https://api.github.com/**', (route) => route.fulfill({ json: ISSUES }));
+	await page.goto('/review');
+	await expect(page.getByText("Approvers don't need a token.")).toBeVisible();
+	const cards = page.locator('li.card');
+	await expect(cards).toHaveCount(3);
+	const link = cards.filter({ hasText: '#52' }).getByRole('link', { name: 'Approve on GitHub' });
+	await expect(link).toHaveAttribute(
+		'href',
+		'https://github.com/takitotech-clinical/ecwitemkeys/issues/52'
+	);
+	// Stale (#51) and invalid (#53) proposals can't be approved.
+	await expect(page.getByRole('link', { name: 'Approve on GitHub' })).toHaveCount(1);
+	await expect(page.getByRole('button', { name: 'Approve' })).toHaveCount(0);
+});
+
 test('review queue is read-only for non-approvers', async ({ page }) => {
 	await page.route('https://api.github.com/**', (route) =>
 		route.fulfill({ json: route.request().url().endsWith('/user') ? { login: 'someone' } : ISSUES })

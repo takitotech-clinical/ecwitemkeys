@@ -14,7 +14,11 @@ concurrency:
 
 jobs:
   validate:
-    if: contains(github.event.issue.labels.*.name, 'edit-proposal')
+    # The title/body test catches proposals filed while the label was missing (the form drops it).
+    if: >-
+      contains(github.event.issue.labels.*.name, 'edit-proposal') ||
+      (startsWith(github.event.issue.title, 'Edit: ') &&
+      contains(github.event.issue.body, '### Proposal'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
