@@ -9,6 +9,14 @@
 
 	let { children }: LayoutProps = $props();
 
+	// Fixed overlays stop above the footer; its height depends on how the disclaimer wraps.
+	let footerHeight = $state(0);
+	$effect(() => {
+		if (footerHeight > 0) {
+			document.documentElement.style.setProperty('--footer-h', `${footerHeight}px`);
+		}
+	});
+
 	app.load();
 
 	const nav = [
@@ -40,15 +48,19 @@
 	<main>
 		{@render children()}
 	</main>
-	<footer>
+	<footer bind:offsetHeight={footerHeight}>
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
-		<a href="https://takitotech.com" target="_blank" rel="noopener">
+		<a class="brandlink" href="https://takitotech.com" target="_blank" rel="noopener">
 			<span class="powered">Powered by</span>
 			<img src={takitotechLogo} alt="" width="22" height="22" />
 			<span class="wordmark">takito<span class="tech">tech</span></span>
 			<span class="sep" aria-hidden="true">·</span>
 			<span class="domain">takitotech.com</span>
 		</a>
+		<p class="disclaimer">
+			TakitoTech does not own, does not claim to own, and is not responsible for any of the content
+			on this website. <a href="{resolve('/about')}#disclaimer">Details</a>
+		</p>
 	</footer>
 </div>
 
@@ -123,16 +135,18 @@
 	footer {
 		flex: none;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		height: var(--footer-h);
-		padding: 0 max(1rem, env(safe-area-inset-right)) env(safe-area-inset-bottom, 0px)
-			max(1rem, env(safe-area-inset-left));
+		gap: 0 1.25rem;
+		padding: 0.25rem max(1rem, env(safe-area-inset-right))
+			max(0.35rem, env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left));
 		border-top: 1px solid var(--border);
 		background: var(--bg-soft);
 		font-size: 13px;
+		text-align: center;
 	}
-	footer a {
+	.brandlink {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.4rem;
@@ -143,10 +157,10 @@
 		text-decoration: none;
 		white-space: nowrap;
 	}
-	footer a:hover {
+	.brandlink:hover {
 		background: var(--bg-hover);
 	}
-	footer a:hover .domain {
+	.brandlink:hover .domain {
 		text-decoration: underline;
 	}
 	footer img {
@@ -167,13 +181,20 @@
 	.domain {
 		color: var(--accent);
 	}
+	.disclaimer {
+		margin: 0;
+		max-width: 50rem;
+		font-size: 11.5px;
+		line-height: 1.4;
+		color: var(--fg-muted);
+	}
 	@media (max-width: 380px) {
 		footer {
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;
 			font-size: 12px;
 		}
-		footer a {
+		.brandlink {
 			gap: 0.3rem;
 			padding: 0 0.4rem;
 		}

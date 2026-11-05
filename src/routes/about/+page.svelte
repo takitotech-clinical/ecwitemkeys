@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import { REPO_URL } from '#lib/config.ts';
+	import { resolve } from '$app/paths';
 </script>
 
 <svelte:head><title>About · eCW Item Keys</title></svelte:head>
@@ -71,6 +71,12 @@
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
 		Source and history: <a href={REPO_URL}>{REPO_URL.replace('https://', '')}</a>.
 	</p>
+
+	<h2 id="disclaimer">Disclaimer</h2>
+	<p class="disclaimer">
+		TakitoTech does not own, does not claim to own, and is not responsible for any of the content.
+		All data are contributed by community members.
+	</p>
 </div>
 
 <style>
@@ -84,6 +90,12 @@
 	h2 {
 		font-size: 16px;
 		margin-top: 1.75rem;
+	}
+	.disclaimer {
+		padding: 0.6rem 0.9rem;
+		border-left: 3px solid var(--border);
+		background: var(--bg-soft);
+		border-radius: var(--radius);
 	}
 	code,
 	kbd {

@@ -21,8 +21,8 @@
 	--mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
 	/* Takitotech wordmark accent, dark enough for text contrast. */
 	--brand: #c2410c;
-	/* The layout footer; fixed overlays stop above it so it stays visible. */
-	--footer-h: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+	/* Layout footer height (measured at runtime); fixed overlays stop above it. */
+	--footer-h: calc(4rem + env(safe-area-inset-bottom, 0px));
 	color-scheme: light;
 }
 
