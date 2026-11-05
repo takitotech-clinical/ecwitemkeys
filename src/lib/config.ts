@@ -10,9 +10,9 @@ export const REPO_URL = `https://github.com/${REPO}`;
  * Discussion section links to GitHub instead of embedding giscus.
  */
 export const GISCUS = {
-	repoId: '',
+	repoId: 'R_kgDOVjHOTg',
 	category: 'Item keys',
-	categoryId: ''
+	categoryId: 'DIC_kwDOVjHOTs4DKeBC'
 };
 
 /** The giscus discussion term for a key; quotes keep surrounding whitespace explicit. */
