@@ -209,3 +209,17 @@ describe('apply Action', () => {
 		expect(applyCommitMessage(outcomes)).toBeNull();
 	});
 });
+
+describe('line diff', () => {
+	it('keeps unchanged lines and marks removed and added ones', async () => {
+		const { lineDiff } = await import('../../src/lib/github/diff.ts');
+		expect(lineDiff('a\nb\nc', 'a\nB\nc\nd')).toEqual([
+			{ op: 'same', text: 'a' },
+			{ op: 'del', text: 'b' },
+			{ op: 'add', text: 'B' },
+			{ op: 'same', text: 'c' },
+			{ op: 'add', text: 'd' }
+		]);
+		expect(lineDiff('', 'x')).toEqual([{ op: 'add', text: 'x' }]);
+	});
+});
