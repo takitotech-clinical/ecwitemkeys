@@ -167,4 +167,4 @@ pnpm lint && pnpm check
 ## License
 
 The code is released under the [MIT License](LICENSE). The license covers only what TakitoTech
-and contributors wrote. It does not cover data provided by 3rd party companies.
+and contributors wrote. It does not cover data from 3rd external sources.
