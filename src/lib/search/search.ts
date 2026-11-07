@@ -4,6 +4,10 @@
  */
 import type { Dataset } from '../data/model.ts';
 import { normalize } from './normalize.ts';
+import { ranks } from './sort.ts';
+
+/** Column whose values order the default view, highest first (unset last). */
+export const PRIORITY_COLUMN = 'rank';
 
 export interface Term {
 	text: string;
@@ -61,16 +65,18 @@ export function matchQuery(ds: Dataset, query: Query): Uint8Array | null {
 }
 
 /**
- * Relevance: exact key > key prefix > key contains > display name > other columns. Stable by
- * file order within a tier.
+ * Default order: search relevance (exact key > key prefix > key contains > display name > other
+ * columns), then the `rank` column high to low with unset last, then file order (alphabetical).
  */
 export function rankResults(ds: Dataset, query: Query, result: Int32Array): Int32Array {
 	const q = query.rankText;
-	if (q === '') return result;
+	const priority = ds.byId.has(PRIORITY_COLUMN) ? ranks(ds, PRIORITY_COLUMN) : null;
+	if (q === '' && !priority) return result;
 	const words = q.split(' ');
 	const keyNorm = ds.norm[0];
 	const display = ds.byId.get('display_name');
 	const tier = (i: number) => {
+		if (q === '') return 0;
 		const k = keyNorm[i];
 		if (k === q) return 0;
 		if (k.startsWith(q)) return 1;
@@ -80,7 +86,9 @@ export function rankResults(ds: Dataset, query: Query, result: Int32Array): Int3
 	};
 	const tiers = new Uint8Array(ds.n);
 	for (const i of result) tiers[i] = tier(i);
-	return result.slice().sort((a, b) => tiers[a] - tiers[b] || a - b);
+	return result
+		.slice()
+		.sort((a, b) => tiers[a] - tiers[b] || (priority ? priority[b] - priority[a] : 0) || a - b);
 }
 
 /** Case-insensitive spans of `text` that match any positive term, for highlighting. */

@@ -4,7 +4,8 @@ import type { Schema } from '../../src/lib/data/schema.ts';
 
 export const fixture = (name: string) => readFileSync(`tests/fixtures/${name}`, 'utf8');
 
-export const schema: Schema = JSON.parse(readFileSync('source/additional.schema.json', 'utf8'));
+/** Pinned so adding columns to source/ doesn't break tests built on fixed-width rows. */
+export const schema: Schema = JSON.parse(fixture('additional.schema.json'));
 
 /** Builds an SSMS-style export (BOM, CRLF, footer) from rows. */
 export function exportText(rows: string[][], header = ['key', 'support_remarks', 'display_name']) {

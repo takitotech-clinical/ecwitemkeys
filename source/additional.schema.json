@@ -26,8 +26,23 @@
 			"id": "category",
 			"label": "Category",
 			"type": "enum",
-			"values": ["system"],
+			"values": [
+				"system"
+			],
 			"help": "system = item key the program depends on; do not change."
+		},
+		{
+			"id": "rank",
+			"label": "Rank",
+			"type": "enum",
+			"values": [
+				"5 - recommended for all",
+				"4 - optional for all",
+				"3 - recommended for some",
+				"2 - optional for some",
+				"1 - ignore"
+			],
+			"help": "How much an admin needs to care about this key. Blank = not reviewed. Keep category=system keys at 1 - ignore (synced by hand)."
 		}
 	]
 }

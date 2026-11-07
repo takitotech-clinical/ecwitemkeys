@@ -5,7 +5,7 @@ import { normalize } from '../../src/lib/search/normalize.ts';
 import { matchQuery, parseQuery, rankResults } from '../../src/lib/search/search.ts';
 import { sortResults } from '../../src/lib/search/sort.ts';
 import { parseViewState, viewStateToSearch } from '../../src/lib/state/url-state.ts';
-import { bundle } from './helpers.ts';
+import { bundle, schema } from './helpers.ts';
 
 const T0 = '2026-11-04T14:00:00Z';
 const T1 = '2026-12-01T15:00:00Z';
@@ -61,6 +61,46 @@ describe('search', () => {
 		const mask = matchQuery(ds, query)!;
 		const result = Int32Array.from({ length: ds.n }, (_, i) => i).filter((i) => mask[i]);
 		expect(keysOf(rankResults(ds, query, result))).toEqual(['HPI', 'HPINotes', 'NotesHPI', 'Zeta']);
+	});
+});
+
+describe('default order with a rank column', () => {
+	const RANKS = ['5 - all', '3 - some', '1 - ignore'];
+	const rankDs = buildDataset(
+		bundle(
+			ROWS.map((r, i) => [...r, ['', '1 - ignore', '3 - some', '', '5 - all', '3 - some'][i]]),
+			{
+				additionalSchema: {
+					...schema,
+					columns: [...schema.columns, { id: 'rank', label: 'Rank', type: 'enum', values: RANKS }]
+				}
+			}
+		)
+	);
+	const keys = (r: Int32Array) => [...r].map((i) => rankDs.keys[i]);
+	const all = Int32Array.from({ length: rankDs.n }, (_, i) => i);
+
+	it('sorts by rank high to low, unset last, then alphabetically', () => {
+		expect(keys(rankResults(rankDs, parseQuery('', rankDs), all))).toEqual([
+			'NotesHPI',
+			'HPINotes',
+			'Zeta',
+			'HPI',
+			'ANSI5010',
+			'MIPS_Migrate '
+		]);
+	});
+	it('keeps search relevance ahead of rank', () => {
+		const query = parseQuery('hpi', rankDs);
+		const mask = matchQuery(rankDs, query)!;
+		const result = all.filter((i) => mask[i]);
+		// The exact match HPI (rank 1) still comes first, and HPINotes (3) beats NotesHPI (5).
+		expect(keys(rankResults(rankDs, query, result))).toEqual([
+			'HPI',
+			'HPINotes',
+			'NotesHPI',
+			'Zeta'
+		]);
 	});
 });
 

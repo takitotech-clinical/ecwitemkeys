@@ -13,7 +13,7 @@ const rankCache = new WeakMap<Dataset, Map<string, Int32Array>>();
 const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
 /** Rank of each row's value in a column (ties share a rank; empty = -1). */
-function ranks(ds: Dataset, columnId: string): Int32Array {
+export function ranks(ds: Dataset, columnId: string): Int32Array {
 	let cache = rankCache.get(ds);
 	if (!cache) rankCache.set(ds, (cache = new Map()));
 	const hit = cache.get(columnId);
