@@ -85,7 +85,7 @@ jobs:
       - name: Build site
         run: pnpm exec vite build
         env:
-          BASE_PATH: /ecwitemkeys
+          BASE_PATH: ''
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -16,7 +16,7 @@ time. The app records when each key first appeared and when it disappeared.
 
 | Topic                 | Decision                                                                                                                                                                                                                                                                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Repo / site           | `takitotech-clinical/ecwitemkeys`, **public**, served by **GitHub Pages** at `https://takitotech-clinical.github.io/ecwitemkeys/`, built and deployed by GitHub Actions. No server, no Worker.                                                                                                                                                    |
+| Repo / site           | `takitotech-clinical/ecwitemkeys`, **public**, served by **GitHub Pages** at `https://ecwitemkeys.takitotech.com/`, built and deployed by GitHub Actions. No server, no Worker.                                                                                                                                                    |
 | Edits                 | Users propose edits to the **user-editable additional columns only**: never `key`, never itemkeys columns, never the managed `added`/`expired` dates. Proposals become **GitHub Issues** created from a prefilled issue form.                                                                                                                     |
 | Approval              | **In-app review queue.** Approver list at launch: **`TriStarGodAI`**, extendable in `config/approvers.json`. Approving applies the change through a GitHub Action, which commits and redeploys.                                                                                                                                                   |
 | Discussion            | **GitHub Discussions**, one thread per key, embedded in the app with **giscus**.                                                                                                                                                                                                                                                                  |
@@ -415,8 +415,8 @@ src/
     about/+page.svelte     how to contribute, how proposals work
 ```
 
-- `adapter-static` with `paths.base` = `/ecwitemkeys`, read from an env var (`BASE_PATH`) so
-  local preview can use `/`.
+- `adapter-static` with `paths.base` read from an env var (`BASE_PATH`, default `/ecwitemkeys`).
+  CI builds with `BASE_PATH=` (empty) because the custom domain serves the site from `/`.
 - Add `static/.nojekyll`, and a `404.html` fallback that redirects to the base path.
 
 ### 4.2 Loading

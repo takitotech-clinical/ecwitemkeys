@@ -4,7 +4,7 @@ A fast, searchable table of every eCW item key (`mobiledoc.dbo.itemkeys`), joine
 community-maintained descriptions and categories. It works on desktop and mobile, with a
 discussion thread per key and maintainer-approved edits.
 
-**Site:** https://takitotech-clinical.github.io/ecwitemkeys/
+**Site:** https://ecwitemkeys.takitotech.com/
 
 The design is documented in [PLAN.md](PLAN.md).
 
@@ -146,7 +146,7 @@ pnpm lint && pnpm check
 ```
 
 - `pnpm build` produces the static site in `build/`. `BASE_PATH` defaults to `/ecwitemkeys`; set
-  `BASE_PATH=` to serve it from `/`.
+  `BASE_PATH=` to serve it from `/` (as CI does for the custom domain).
 - E2E tests build from `tests/fixtures/e2e` (set with `DATA_SOURCE_DIR`), a small dataset with
   new and expired keys.
 - Proposal scripts can be tried without GitHub writes:

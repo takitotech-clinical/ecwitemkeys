@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config';
 import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 
-// GitHub Pages serves the site from /ecwitemkeys. Set BASE_PATH= (empty) to serve from /.
+// Default base is /ecwitemkeys (GitHub Pages project URL). CI sets BASE_PATH= (empty) for the custom domain.
 const base = (process.env.BASE_PATH ?? '/ecwitemkeys') as '' | `/${string}`;
 
 export default defineConfig({
