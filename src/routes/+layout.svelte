@@ -3,7 +3,6 @@
 	import takitotechLogo from '#lib/assets/takitotech.svg';
 	import ThemeToggle from '#lib/components/ThemeToggle.svelte';
 	import { theme } from '#lib/state/theme.svelte.ts';
-	import { REPO_URL } from '#lib/config.ts';
 	import { app } from '#lib/state/app.svelte.ts';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
@@ -67,13 +66,14 @@
 			provided by eClinicalWorks. Always validate the item key and its functionality with
 			eClinicalWorks before activating it. <a href="{resolve('/about')}#disclaimer">Details</a>
 		</p>
-		<p class="links">
-			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
-			<a href={REPO_URL} target="_blank" rel="noopener">Source</a>
-			<span aria-hidden="true">·</span>
-			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
-			<a href="https://takitotech.com" target="_blank" rel="noopener">takitotech.com</a>
-		</p>
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
+		<a class="brandlink" href="https://takitotech.com" target="_blank" rel="noopener">
+			<span class="powered">Powered by</span>
+			<img src={takitotechLogo} alt="" width="22" height="22" />
+			<span class="wordmark">takito<span class="tech">tech</span></span>
+			<span class="sep" aria-hidden="true">·</span>
+			<span class="domain">takitotech.com</span>
+		</a>
 	</footer>
 </div>
 
@@ -171,7 +171,7 @@
 			padding-left: 0.75rem;
 			padding-right: 0.75rem;
 		}
-		.wordmark {
+		.brand .wordmark {
 			display: none;
 		}
 		nav a {
@@ -208,15 +208,49 @@
 		font-size: 11.5px;
 		line-height: 1.45;
 	}
-	.links {
-		display: flex;
-		gap: 0.5rem;
-		justify-content: center;
+	.brandlink {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		min-height: 2rem;
+		padding: 0 0.7rem;
+		border-radius: 999px;
+		color: var(--fg-muted);
+		font-size: 13px;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	.brandlink:hover {
+		background: var(--tint-hover);
+		color: var(--fg-muted);
+	}
+	.brandlink:hover .domain {
+		text-decoration: underline;
+	}
+	.brandlink img {
+		display: block;
+	}
+	.brandlink .wordmark {
+		font-size: 15px;
+	}
+	.sep {
+		color: var(--fg-faint);
+	}
+	.domain {
+		color: var(--accent);
 	}
 	@media (max-width: 380px) {
 		footer {
 			padding-left: 0.6rem;
 			padding-right: 0.6rem;
+		}
+		.brandlink {
+			gap: 0.3rem;
+			padding: 0 0.4rem;
+			font-size: 12px;
+		}
+		.brandlink .wordmark {
+			font-size: 14px;
 		}
 	}
 </style>
