@@ -49,6 +49,12 @@
 		{@render children()}
 	</main>
 	<footer bind:offsetHeight={footerHeight}>
+		<p class="disclaimer">
+			TakitoTech does not own, does not claim to own, and is not responsible for the community
+			contributed content. All data are contributed by community members and were not officially
+			provided by eClinicalWorks. Always validate the item key and its functionality with
+			eClinicalWorks before activating it. <a href="{resolve('/about')}#disclaimer">Details</a>
+		</p>
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
 		<a class="brandlink" href="https://takitotech.com" target="_blank" rel="noopener">
 			<span class="powered">Powered by</span>
@@ -57,12 +63,6 @@
 			<span class="sep" aria-hidden="true">·</span>
 			<span class="domain">takitotech.com</span>
 		</a>
-		<p class="disclaimer">
-			TakitoTech does not own, does not claim to own, and is not responsible for the community
-			contributed content. All data are contributed by community members and were not officially
-			provided by eClinicalWorks. Always validate the item key and its functionality with
-			eClinicalWorks before activating it. <a href="{resolve('/about')}#disclaimer">Details</a>
-		</p>
 	</footer>
 </div>
 
@@ -137,11 +137,10 @@
 	footer {
 		flex: none;
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		gap: 0 1.25rem;
-		padding: 0.25rem max(1rem, env(safe-area-inset-right))
+		gap: 0.15rem;
+		padding: 0.4rem max(1rem, env(safe-area-inset-right))
 			max(0.35rem, env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left));
 		border-top: 1px solid var(--border);
 		background: var(--bg-soft);
