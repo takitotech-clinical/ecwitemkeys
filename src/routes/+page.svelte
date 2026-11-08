@@ -258,6 +258,7 @@
 						{selected}
 						{needles}
 						{pending}
+						{hidden}
 						onopen={open}
 					/>
 				{/if}

@@ -13,6 +13,7 @@
 		selected,
 		needles,
 		pending,
+		hidden,
 		onopen
 	}: {
 		ds: Dataset;
@@ -21,13 +22,17 @@
 		selected: number | undefined;
 		needles: string[];
 		pending: Map<string, number>;
+		/** Column ids hidden with the Columns menu (shared with the table). */
+		hidden: string[];
 		onopen: (row: number, pos: number) => void;
 	} = $props();
 
 	const ROW = 124;
 	const iDisplay = $derived(ds.byId.get('display_name')!.index);
 	const iRemarks = $derived(ds.byId.get('support_remarks')!.index);
-	const enums = $derived(ds.columns.filter((c) => c.type === 'enum'));
+	const enums = $derived(ds.columns.filter((c) => c.type === 'enum' && !hidden.includes(c.id)));
+	const showDisplay = $derived(!hidden.includes('display_name'));
+	const showRemarks = $derived(!hidden.includes('support_remarks'));
 
 	let list: VirtualList | undefined = $state();
 	export const scrollToIndex = (i: number) => list?.scrollToIndex(i);
@@ -61,10 +66,14 @@
 						{#if ds.rows[i][c.index]}<span class="chip">{ds.rows[i][c.index]}</span>{/if}
 					{/each}
 				</div>
-				<div class="display"><Value value={ds.rows[i][iDisplay]} {needles} /></div>
-				<div class="remarks" class:lastknown={ds.lastKnown[i]}>
-					<Value value={ds.rows[i][iRemarks]} {needles} />
-				</div>
+				{#if showDisplay}
+					<div class="display"><Value value={ds.rows[i][iDisplay]} {needles} /></div>
+				{/if}
+				{#if showRemarks}
+					<div class="remarks" class:lastknown={ds.lastKnown[i]} class:tall={!showDisplay}>
+						<Value value={ds.rows[i][iRemarks]} {needles} />
+					</div>
+				{/if}
 				<div class="badges"><Badges {ds} {i} pending={pending.get(ds.keys[i]) ?? 0} /></div>
 			</a>
 		</div>
@@ -123,6 +132,11 @@
 		overflow: hidden;
 		font-size: 13px;
 		overflow-wrap: anywhere;
+	}
+	/* Remarks take the display name's line when it is hidden. */
+	.remarks.tall {
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
 	}
 	.lastknown {
 		font-style: italic;
