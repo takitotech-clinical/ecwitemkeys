@@ -7,7 +7,7 @@
 
 <div class="page prose">
 	<h1>About</h1>
-	<p>
+	<p class="lead">
 		This site lists every eCW item key from <span class="mono">mobiledoc.dbo.itemkeys</span>, joined
 		with community-maintained descriptions and categories. Search, filter and share links to any
 		key; discuss a key; and propose better descriptions.
@@ -73,7 +73,7 @@
 	</p>
 
 	<h2 id="disclaimer">Disclaimer</h2>
-	<p class="disclaimer">
+	<p class="disclaimer tk-card current">
 		TakitoTech does not own, does not claim to own, and is not responsible for the community
 		contributed content. All data are contributed by community members and were not officially
 		provided by eClinicalWorks. Always validate the item key and its functionality with
@@ -84,28 +84,42 @@
 <style>
 	.prose {
 		max-width: 46rem;
-		line-height: 1.6;
+		line-height: 1.65;
+		color: var(--fg-muted);
+		font-size: 14.5px;
 	}
-	h1 {
-		font-size: 22px;
+	.lead {
+		margin-top: 0;
+		font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+		line-height: 1.5;
+		color: var(--fg);
+		letter-spacing: -0.01em;
 	}
 	h2 {
-		font-size: 16px;
-		margin-top: 1.75rem;
+		padding-top: 1.1rem;
+		border-top: 1px solid var(--line);
+	}
+	strong,
+	em {
+		color: var(--fg-2);
+	}
+	li {
+		margin: 0.35rem 0;
+	}
+	li::marker {
+		color: var(--accent);
 	}
 	.disclaimer {
-		padding: 0.6rem 0.9rem;
-		border-left: 3px solid var(--border);
-		background: var(--bg-soft);
-		border-radius: var(--radius);
+		color: var(--fg-2);
 	}
 	code,
 	kbd {
 		font-family: var(--mono);
-		font-size: 0.9em;
-		background: var(--bg-soft);
-		border: 1px solid var(--border);
-		border-radius: 4px;
-		padding: 0 0.3em;
+		font-size: 0.85em;
+		color: var(--fg-2);
+		background: var(--tint);
+		border: 1px solid var(--line);
+		border-radius: 6px;
+		padding: 1px 6px;
 	}
 </style>

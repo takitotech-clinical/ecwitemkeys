@@ -102,13 +102,6 @@
 </section>
 
 <style>
-	h1 {
-		font-size: 22px;
-	}
-	h2 {
-		font-size: 16px;
-		margin-top: 1.75rem;
-	}
 	.stats th {
 		text-align: left;
 		font-weight: 500;

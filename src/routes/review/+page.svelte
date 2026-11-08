@@ -15,9 +15,3 @@
 		<p>Loading…</p>
 	{/if}
 </div>
-
-<style>
-	h1 {
-		font-size: 22px;
-	}
-</style>

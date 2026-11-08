@@ -4,6 +4,8 @@
 -->
 <script lang="ts">
 	import { GISCUS, REPO, REPO_URL, discussionTerm } from '#lib/config.ts';
+	import { theme } from '#lib/state/theme.svelte.ts';
+	import { untrack } from 'svelte';
 
 	let { key, count }: { key: string; count: number } = $props();
 
@@ -28,6 +30,18 @@
 		return () => io.disconnect();
 	});
 
+	const giscusTheme = (t: 'light' | 'dark') => (t === 'dark' ? 'transparent_dark' : 'light');
+
+	// Retheme an already-loaded thread when the site theme changes.
+	$effect(() => {
+		const t = giscusTheme(theme.resolved);
+		const frame = section?.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+		frame?.contentWindow?.postMessage(
+			{ giscus: { setConfig: { theme: t } } },
+			'https://giscus.app'
+		);
+	});
+
 	/** Attachment: injects the giscus script once the section is visible. */
 	function giscus(node: HTMLDivElement) {
 		if (!visible) return;
@@ -46,7 +60,8 @@
 			'reactions-enabled': '1',
 			'emit-metadata': '0',
 			'input-position': 'top',
-			theme: 'preferred_color_scheme',
+			// Untracked: theme changes are posted to the loaded frame instead of reloading it.
+			theme: untrack(() => giscusTheme(theme.resolved)),
 			lang: 'en',
 			loading: 'lazy'
 		};

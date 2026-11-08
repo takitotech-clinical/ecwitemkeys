@@ -4,6 +4,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+		<script>
+			// Apply a saved light/dark choice before first paint (see src/lib/state/theme.svelte.ts).
+			try {
+				const t = JSON.parse(localStorage.getItem('ecwitemkeys:theme'));
+				if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+			} catch {
+				// No stored choice or storage unavailable: follow the system.
+			}
+		</script>
 		<meta name="description" content="Search and discuss eCW item keys." />
 		<title>eCW Item Keys</title>
 		%sveltekit.head%

@@ -95,7 +95,7 @@
 	.backdrop {
 		position: fixed;
 		inset: 0 0 var(--footer-h);
-		background: rgb(0 0 0 / 0.25);
+		background: var(--backdrop);
 		z-index: 20;
 	}
 	.panel {
