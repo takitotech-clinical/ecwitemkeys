@@ -453,7 +453,7 @@ at 50k rows**, 60 fps scrolling, and **under 2 s first load** on 4G.
     the same local day are shown with their times.
   - **Expired:** the same, for expiry timestamps.
   - **Enum columns** from the schema (initially `category`: `system` / not set).
-  - **Derived:** "Has description", "Display name" (set / empty / NULL), "ecw remarks"
+  - **Derived:** "Has description", "Display name" (set / empty / NULL), "eCW Remarks"
     (set / empty), "Has discussion", and "Has pending proposal".
   - Values within one facet are ORed; different facets are ANDed. Counts are recomputed
     against the other active filters.

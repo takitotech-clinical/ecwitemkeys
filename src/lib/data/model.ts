@@ -37,7 +37,7 @@ export interface Dataset {
 
 const ITEMKEYS_LABELS: Record<string, [string, string[]]> = {
 	key: ['Key', ['key']],
-	ecw_remarks: ['ecw remarks', ['remarks', 'ecw_remarks']],
+	ecw_remarks: ['eCW Remarks', ['remarks', 'ecw_remarks']],
 	display_name: ['Display name', ['display', 'display_name']]
 };
 

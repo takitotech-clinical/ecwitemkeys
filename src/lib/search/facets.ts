@@ -135,7 +135,7 @@ export function buildFacets(ds: Dataset, pending: Set<string> | null): Facet[] {
 	facets.push(
 		facetFrom(
 			'remarks',
-			'ecw remarks',
+			'eCW Remarks',
 			[
 				{ value: 'set', label: 'Set' },
 				{ value: 'empty', label: 'Empty' }
