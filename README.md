@@ -164,7 +164,11 @@ pnpm lint && pnpm check
 | `discussion-sync.yml`   | discussion or comment created or deleted  | reruns the pipeline (debounced) for comment counts    |
 | `labels.yml`            | label definitions changed, manual         | creates or updates the proposal labels                |
 
+## Disclaimer
+
+TakitoTech does not own, does not claim to own, and is not responsible for the community contributed content. All data are contributed by community members and were not officially provided by eClinicalWorks. Always validate the item key and its functionality with eClinicalWorks before activating it.
+
 ## License
 
 The code is released under the [MIT License](LICENSE). The license covers only what TakitoTech
-and contributors wrote. It does not cover data from 3rd external sources.
+and contributors wrote. It does not cover data from eClinicalWorks.

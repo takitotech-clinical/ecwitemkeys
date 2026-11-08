@@ -1,10 +1,10 @@
 <script lang="ts">
-	import '../app.css';
 	import favicon from '#lib/assets/favicon.svg';
 	import takitotechLogo from '#lib/assets/takitotech.svg';
+	import { app } from '#lib/state/app.svelte.ts';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { app } from '#lib/state/app.svelte.ts';
+	import '../app.css';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
@@ -58,8 +58,10 @@
 			<span class="domain">takitotech.com</span>
 		</a>
 		<p class="disclaimer">
-			TakitoTech does not own, does not claim to own, and is not responsible for any of the content
-			on this website. <a href="{resolve('/about')}#disclaimer">Details</a>
+			TakitoTech does not own, does not claim to own, and is not responsible for the community
+			contributed content. All data are contributed by community members and were not officially
+			provided by eClinicalWorks. Always validate the item key and its functionality with
+			eClinicalWorks before activating it. <a href="{resolve('/about')}#disclaimer">Details</a>
 		</p>
 	</footer>
 </div>
