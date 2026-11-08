@@ -33,13 +33,13 @@ AdminDashboardChromeSupported`2026-11-05T13:17:24Z````
 AdminDashboardSupported`2026-11-05T13:17:24Z````
 Administrator`2026-11-05T13:17:24Z````
 AdminOnlyLicenseAlert`2026-11-05T13:17:24Z````
-AdminProviderOnboarding`2026-11-05T13:17:24Z````
-AdminStaffOnboarding`2026-11-05T13:17:24Z````
+AdminProviderOnboarding`2026-11-05T13:17:24Z``Displays provider onboarding setup section (enabled by default).``5 - recommended for all
+AdminStaffOnboarding`2026-11-05T13:17:24Z``Displays staff onboarding setup section (enabled by default).``5 - recommended for all
 AdolescencePortalSupported`2026-11-05T13:17:24Z````
 ADTonUpdatePtPortalDemo`2026-11-05T13:17:24Z````
 Advance Directive from Nursing Facility`2026-11-05T13:17:24Z````
 advancedAlerts_TPS`2026-11-05T13:17:24Z````
-AdvancedMonitoring`2026-11-05T13:17:24Z````
+AdvancedMonitoring`2026-11-05T13:17:24Z``Tracks unusual activities in the practice.``5 - recommended for all
 AdvanceDrawing`2026-11-05T13:17:24Z````
 AdvanceEcliniformInking`2026-11-05T13:17:24Z````
 AdvanceLetterPrinting`2026-11-05T13:17:24Z````
@@ -67,7 +67,7 @@ AllowAssignFavs`2026-11-05T13:17:24Z````
 AllowBehavioralHealthModule`2026-11-05T13:17:24Z```system`1 - ignore
 AllowChangeClaimStatus276277`2026-11-05T13:17:24Z````
 AllowClaimFeeScheduleForSplit`2026-11-05T13:17:24Z````
-AllowCOFSharingWithinPractice`2026-11-05T13:17:24Z````
+AllowCOFSharingWithinPractice`2026-11-05T13:17:24Z``ePayments Card on File sharing across all facilities.``4 - optional for all
 AllowCPTDeletionWithPmts`2026-11-05T13:17:24Z````
 AllowCreateFtpSubDirs`2026-11-05T13:17:24Z````
 AllowCustomRxForERx`2026-11-05T13:17:24Z````
@@ -143,7 +143,7 @@ ASC_OR_Resources_Migration`2026-11-05T13:17:24Z````
 ASC_PatientStatementLogOptions`2026-11-05T13:17:24Z````
 ASCAIEnabled`2026-11-05T13:17:24Z````
 ASCDischargeEncDate`2026-11-05T13:17:24Z````
-ASCEnabled`2026-11-05T13:17:24Z````
+ASCEnabled`2026-11-05T13:17:24Z``Enables the ASC module.``4 - optional for all
 ASCImagesPrimaryFolder`2026-11-05T13:17:24Z````
 ASCRestrictAppointmentScheduling`2026-11-05T13:17:24Z````
 ascSignature`2026-11-05T13:17:24Z````
@@ -153,8 +153,8 @@ AsmtNotes`2026-11-05T13:17:24Z```system`1 - ignore
 AsmtSpecifyNotes`2026-11-05T13:17:24Z```system`1 - ignore
 AssessmentNotes`2026-11-05T13:17:24Z```system`1 - ignore
 Assessments`2026-11-05T13:17:24Z```system`1 - ignore
-Assigned_To_Groups`2026-11-05T13:17:24Z````
-AssignedTo_UserSearchOnly`2026-11-05T13:17:24Z````
+Assigned_To_Groups`2026-11-05T13:17:24Z``Enables Assigned To Group functionality for tasks.``5 - recommended for all
+AssignedTo_UserSearchOnly`2026-11-05T13:17:24Z``Hides care text to Assigned To field in lookups.``4 - optional for all
 AssigningAuthority`2026-11-05T13:17:24Z````
 AssignProgressNoteTo`2026-11-05T13:17:24Z````
 AssignSNOMED`2026-11-05T13:17:24Z````
@@ -227,7 +227,7 @@ BehavioralHealthHistory`2026-11-05T13:17:24Z````
 BehavioralHealthInterventionProviders`2026-11-05T13:17:24Z````
 BehavioralHealthInterventions`2026-11-05T13:17:24Z````
 BehavioralHealthModality`2026-11-05T13:17:24Z````
-BehavioralHealthModule`2026-11-05T13:17:24Z````
+BehavioralHealthModule`2026-11-05T13:17:24Z``Enables the Behavioral Health (BH) module.``4 - optional for all
 BehavioralHealthObjectives`2026-11-05T13:17:24Z````
 BehavioralHealthOutcomes`2026-11-05T13:17:24Z````
 BehavioralHealthPGOI`2026-11-05T13:17:24Z````
@@ -266,7 +266,7 @@ BUBBLECUTOFF`2026-11-05T13:17:24Z````
 BUBBLESHEETPTFOLDER`2026-11-05T13:17:24Z````
 BUBBLESHEETUPGRADE`2026-11-05T13:17:24Z````
 BulkCancelAppointments`2026-11-05T13:17:24Z````
-BulkDeleteIncomingFaxes`2026-11-05T13:17:24Z````
+BulkDeleteIncomingFaxes`2026-11-05T13:17:24Z``Enables bulk deletion of Fax Inbox documents.``5 - recommended for all
 BulkPatientInboundBatchSize`2026-11-05T13:17:24Z````
 BulkPatientInboundWaitTimeMs`2026-11-05T13:17:24Z````
 BulkPrintTaskRunning`2026-11-05T13:17:24Z````
@@ -356,7 +356,7 @@ CDSSSupported`2026-11-05T13:17:24Z````
 CentralActivitiesisEnabled`2026-11-05T13:17:24Z````
 CentralCursorDefaults`2026-11-05T13:17:24Z````
 CentralDashboardTilesisEnabled`2026-11-05T13:17:24Z````
-CentralEnablePlaylistFramework`2026-11-05T13:17:24Z````
+CentralEnablePlaylistFramework`2026-11-05T13:17:24Z``Enables Playlist functionality.``4 - optional for all
 CentralIncorrectSystemDateFormat`2026-11-05T13:17:24Z````
 CentralPlaylistSpeed`2026-11-05T13:17:24Z````
 CentralSessionHelperLogging`2026-11-05T13:17:24Z````
@@ -439,7 +439,7 @@ ClassicPatientHubChromium`2026-11-05T13:17:24Z````
 ClearIECache`2026-11-05T13:17:24Z```system`1 - ignore
 ClientUpdateExe`2026-11-05T13:17:24Z````
 ClientVersion`2026-11-05T13:17:24Z````
-clinicalcalculators`2026-11-05T13:17:24Z````
+clinicalcalculators`2026-11-05T13:17:24Z``Enables integrated Clinical Calculator on Progress Notes.``5 - recommended for all
 ClinicalDecisionHubDynamedActivationEmail`2026-11-05T13:17:24Z````
 ClinicalDecisionHubEndpoint`2026-11-05T13:17:24Z````
 ClinicalDecisionSupportHubSNAPSHOT`2026-11-05T13:17:24Z````
@@ -744,7 +744,7 @@ DisablePtEdPHI`2026-11-05T13:17:24Z````
 DisableQuestionnaireForTV`2026-11-05T13:17:24Z````
 DisableRxEditInput`2026-11-05T13:17:24Z````
 DisableRxEditStrengthFormulation`2026-11-05T13:17:24Z````
-DisableSOGI`2026-11-05T13:17:24Z````
+DisableSOGI`2026-11-05T13:17:24Z``Disables SOGI and medical transition history information.``4 - optional for all
 DisableSunohPaymentCheck`2026-11-05T13:17:24Z````
 DisableToolBarUntilNextLoad`2026-11-05T13:17:24Z````
 DisableUnPostedCalculationInAccountLookup`2026-11-05T13:17:24Z````
@@ -828,7 +828,7 @@ DoNotPostEraForSecondaryClaims`2026-11-05T13:17:24Z````
 DonotPrintDunningMessage`2026-11-05T13:17:24Z````
 DoNotPrintFutureApptsInPtPmtReceipt`2026-11-05T13:17:24Z```system`1 - ignore
 DoNotPrintNDCInBox19`2026-11-05T13:17:24Z```system`1 - ignore
-DoNotRedactSensitiveDataOnNotesMultiPrintFax`2026-11-05T13:17:24Z````
+DoNotRedactSensitiveDataOnNotesMultiPrintFax`2026-11-05T13:17:24Z``Prevents automatic redaction when printing/faxing multiple PNs.``4 - optional for all
 DoNotRemoveInsuranceFromDemographics`2026-11-05T13:17:24Z```system`1 - ignore
 DoNotSelectIHLabsInCommonSendScreen`2026-11-05T13:17:24Z````
 DoNotSendAcctPrefix`2026-11-05T13:17:24Z````
@@ -869,7 +869,7 @@ eBODailyMenu`2026-11-05T13:17:24Z````
 eBODailyRpt`2026-11-05T13:17:24Z````
 eBODailyUrl`2026-11-05T13:17:24Z````
 eBODBNameSpace`2026-11-05T13:17:24Z````
-eboGlobalMapping`2026-11-05T13:17:24Z````
+eboGlobalMapping`2026-11-05T13:17:24Z``Displays eBO mapping link; enables eBO Global Mapping.``4 - optional for all
 eBOGurStmtUrl`2026-11-05T13:17:24Z````
 eBOLaunchBrowser`2026-11-05T13:17:24Z````
 eBOMECJobsAllowed`2026-11-05T13:17:24Z````
@@ -981,7 +981,7 @@ EicrMinWaitHoursToProcessEnc`2026-11-05T13:17:24Z````
 EicrOrphanTxBatchSize`2026-11-05T13:17:24Z````
 EicrResponseEndPoint`2026-11-05T13:17:24Z````
 EicrResponseMaxWaitHours`2026-11-05T13:17:24Z````
-EJellyBeanPatientMatchbyUser`2026-11-05T13:17:24Z````
+EJellyBeanPatientMatchbyUser`2026-11-05T13:17:24Z``Allows populating match data for Rx Renewal/Change transactions.``4 - optional for all
 ElapsedReconResults`2026-11-05T13:17:24Z````
 EligAsyncVerification`2026-11-05T13:17:24Z````
 Eligibility_EnableOtherInsInBulkVerification`2026-11-05T13:17:24Z````
@@ -1071,16 +1071,16 @@ EnableAL340Form`2026-11-05T13:17:24Z````
 EnableAlertDoc`2026-11-05T13:17:24Z````
 EnableAllBatches`2026-11-05T13:17:24Z````
 EnableAllergicInteractionReason`2026-11-05T13:17:24Z````
-EnableAllergyInventoryIntegration`2026-11-05T13:17:24Z````
+EnableAllergyInventoryIntegration`2026-11-05T13:17:24Z``Controls Allergy–Inventory Management integration.``4 - optional for all
 EnableAllForOTP`2026-11-05T13:17:24Z````
 EnableAllMedispanForCorrections`2026-11-05T13:17:24Z````
-EnableAlternateRecipientFeature`2026-11-05T13:17:24Z````
+EnableAlternateRecipientFeature`2026-11-05T13:17:24Z``Shows Alternate Recipients button (Healow Connect/Send Message).``4 - optional for all
 EnableAlternateTranscription`2026-11-05T13:17:24Z````
 enableAnalyticsCentral`2026-11-05T13:17:24Z````
 EnableAnesthesiaRules`2026-11-05T13:17:24Z````
-EnableAngularMigration`2026-11-05T13:17:24Z````
+EnableAngularMigration`2026-11-05T13:17:24Z``Runs EMR on Angular 16.``4 - optional for all
 EnableAOEForER`2026-11-05T13:17:24Z````
-EnableAPCM`2026-11-05T13:17:24Z````
+EnableAPCM`2026-11-05T13:17:24Z``Enables Advanced Primary Care Management program.``4 - optional for all
 EnableAPL2eBOReport`2026-11-05T13:17:24Z````
 EnableAppendAllTifFiles`2026-11-05T13:17:24Z````
 EnableAppnData`2026-11-05T13:17:24Z````
@@ -1101,9 +1101,9 @@ EnableAssignedToStartWithSearch`2026-11-05T13:17:24Z````
 enableAssigntoValidation`2026-11-05T13:17:24Z````
 EnableAssociatePatientCasesAppt`2026-11-05T13:17:24Z````
 EnableAucOda`2026-11-05T13:17:24Z````
-EnableAudiologyImport_Integration`2026-11-05T13:17:24Z````
+EnableAudiologyImport_Integration`2026-11-05T13:17:24Z``Displays Audiology Import tab; Interface Diagnostics option.``4 - optional for all
 EnableAudiologyProgressNote`2026-11-05T13:17:24Z````
-EnableAudiologyWF`2026-11-05T13:17:24Z````
+EnableAudiologyWF`2026-11-05T13:17:24Z``Enables the Audiology module.``4 - optional for all
 EnableAuditLogs`2026-11-05T13:17:24Z````
 EnableAuthenticationSecurityLog`2026-11-05T13:17:24Z````
 EnableAutoAdjustFeeSchedule`2026-11-05T13:17:24Z````
@@ -1160,7 +1160,7 @@ EnableCareReport`2026-11-05T13:17:24Z````
 EnableCASCodePtstmt`2026-11-05T13:17:24Z````
 EnableCaseLabel`2026-11-05T13:17:24Z````
 EnableCaseManager`2026-11-05T13:17:24Z````
-EnableCategoryConcurrency`2026-11-05T13:17:24Z````
+EnableCategoryConcurrency`2026-11-05T13:17:24Z``Applies concurrency lock at H&P category level.``5 - recommended for all
 EnableCBCallbackLiveChatNotification`2026-11-05T13:17:24Z````
 EnableCCABN`2026-11-05T13:17:24Z````
 EnableCCBHC20170701Rule`2026-11-05T13:17:24Z````
@@ -1176,17 +1176,17 @@ EnableCCMRSecurity`2026-11-05T13:17:24Z````
 EnableCDSODA`2026-11-05T13:17:24Z````
 EnableCDSSMeasureParameterization`2026-11-05T13:17:24Z````
 EnableCelldynWebScreen`2026-11-05T13:17:24Z````
-EnableCentralizedScheduling`2026-11-05T13:17:24Z````
+EnableCentralizedScheduling`2026-11-05T13:17:24Z``Enables Centralized Scheduling.``5 - recommended for all
 EnableCGHNMeasures`2026-11-05T13:17:24Z````
 enableChangeApptDateandTimeToCheckinDateandTime`2026-11-05T13:17:24Z````
 EnableChargeCode`2026-11-05T13:17:24Z````
 EnableChargesRightPanel`2026-11-05T13:17:24Z````
 EnableCharLevelEncoding`2026-11-05T13:17:24Z````
 EnableCheckForPastVisitForDelete`2026-11-05T13:17:24Z````
-EnableCheckinQuesMultiLang`2026-11-05T13:17:24Z````
+EnableCheckinQuesMultiLang`2026-11-05T13:17:24Z``Enables multi-language questionnaires (healow CHECK-IN/Connect).``5 - recommended for all
 EnableChildProxyPassiveAccountSupported`2026-11-05T13:17:24Z````
 EnableChromiumReferralFaxAndPrint`2026-11-05T13:17:24Z````
-EnableCitizenLabelPrinter`2026-11-05T13:17:24Z````
+EnableCitizenLabelPrinter`2026-11-05T13:17:24Z``Enables Citizen label printer.``4 - optional for all
 EnableClaimCollection`2026-11-05T13:17:24Z````
 EnableClaimConsolidation`2026-11-05T13:17:24Z````
 EnableClaimFeeSchPickList`2026-11-05T13:17:24Z````
@@ -1203,7 +1203,7 @@ EnableClearingHouseFileImport`2026-11-05T13:17:24Z````
 EnableClientSideCaching`2026-11-05T13:17:24Z````
 EnableClinicalAlerts`2026-11-05T13:17:24Z````
 EnableClinicalDecisionSupport`2026-11-05T13:17:24Z````
-EnableClinicalRuleEngine`2026-11-05T13:17:24Z````
+EnableClinicalRuleEngine`2026-11-05T13:17:24Z``Enables the Clinical Rule Engine.``4 - optional for all
 EnableClinitekWebScreen`2026-11-05T13:17:24Z````
 EnableCloseTransactions`2026-11-05T13:17:24Z````
 EnableCloudCallForDIOrProcedures`2026-11-05T13:17:24Z````
@@ -1225,7 +1225,7 @@ EnableCommonWellAlerts`2026-11-05T13:17:24Z````
 EnableCommonWellInboundAlerts`2026-11-05T13:17:24Z````
 enableCommunicationSettingForFhirPt`2026-11-05T13:17:24Z````
 EnableCompoundUtility`2026-11-05T13:17:24Z````
-EnableConcurLock`2026-11-05T13:17:24Z````
+EnableConcurLock`2026-11-05T13:17:24Z``Prevents two users from accessing the same window at the same time.``5 - recommended for all
 EnableConcurLockForAppt`2026-11-05T13:17:24Z````
 EnableConcurLockForStmts`2026-11-05T13:17:24Z````
 EnableContentDistribution`2026-11-05T13:17:24Z````
@@ -1269,7 +1269,7 @@ EnableDefaultRxConsentToYes`2026-11-05T13:17:24Z````
 EnableDefaultWebPageControl`2026-11-05T13:17:24Z````
 EnableDeletingDevicesRelatedAllPDFFiles`2026-11-05T13:17:24Z````
 EnableDentalClaimEnhancements`2026-11-05T13:17:24Z````
-EnableDentalEMR`2026-11-05T13:17:24Z````
+EnableDentalEMR`2026-11-05T13:17:24Z``Enables eClinicalWorks Dental module.``4 - optional for all
 EnableDentalExaminationConcurLock`2026-11-05T13:17:24Z````
 EnableDentalPreDetermination`2026-11-05T13:17:24Z````
 EnableDentalProviderSlotValidation`2026-11-05T13:17:24Z````
@@ -1355,7 +1355,7 @@ enableExternalRegistries`2026-11-05T13:17:24Z````
 EnableEyeTicket`2026-11-05T13:17:24Z````
 EnableFacialRecognition`2026-11-05T13:17:24Z````
 enableFacilityAccess`2026-11-05T13:17:24Z````
-EnableFacilityAccessRestrictions`2026-11-05T13:17:24Z````
+EnableFacilityAccessRestrictions`2026-11-05T13:17:24Z``Activates facility access warnings (depends on AdvancedMonitoring).``4 - optional for all
 EnableFacilityBasedRegForERx`2026-11-05T13:17:24Z````
 EnableFacilityBasedRx`2026-11-05T13:17:24Z````
 EnableFacilityCheck`2026-11-05T13:17:24Z````
@@ -1363,7 +1363,7 @@ EnableFailedLoginAttempts`2026-11-05T13:17:24Z````
 enableFamilyBooking`2026-11-05T13:17:24Z````
 EnableFaxDialingRules`2026-11-05T13:17:24Z````
 EnableFaxInboxByDepartments`2026-11-05T13:17:24Z````
-EnableFaxNumberValidation`2026-11-05T13:17:24Z````
+EnableFaxNumberValidation`2026-11-05T13:17:24Z``Universal storage/validation of fax numbers.``5 - recommended for all
 EnableFaxPreviewMandatoryFacilityValidation`2026-11-05T13:17:24Z````
 EnableFaxPreviewMandatoryFieldValidation`2026-11-05T13:17:24Z````
 EnableFaxQueuing`2026-11-05T13:17:24Z````
@@ -1406,10 +1406,10 @@ enablehealowmeet`2026-11-05T13:17:24Z````
 EnableHealowpay`2026-11-05T13:17:24Z````
 EnableHealowPayPrint`2026-11-05T13:17:24Z````
 EnableHealowPhone`2026-11-05T13:17:24Z````
-EnableHealowSign`2026-11-05T13:17:24Z````
+EnableHealowSign`2026-11-05T13:17:24Z``Enables healow Sign feature.``4 - optional for all
 EnableHistAppointments`2026-11-05T13:17:24Z````
 enableHistories`2026-11-05T13:17:24Z````
-enableHistoryandPhysical`2026-11-05T13:17:24Z````
+enableHistoryandPhysical`2026-11-05T13:17:24Z``Displays the H&P tab on Progress Notes.``4 - optional for all
 EnableHL7IDUpdate`2026-11-05T13:17:24Z````
 EnableHl7Immunization`2026-11-05T13:17:24Z````
 EnableHomunculusModule`2026-11-05T13:17:24Z````
@@ -1436,7 +1436,7 @@ EnableImprovedValidation`2026-11-05T13:17:24Z````
 EnableInactiveDeceasedAppts`2026-11-05T13:17:24Z````
 EnableInfirmaryConsole`2026-11-05T13:17:24Z````
 EnableInHouseLab`2026-11-05T13:17:24Z````
-EnableInHouseLabOption`2026-11-05T13:17:24Z````
+EnableInHouseLabOption`2026-11-05T13:17:24Z``Locks PNs until in-house order is Collected/Performed/Received.``4 - optional for all
 EnableInPatientVisitFlag`2026-11-05T13:17:24Z````
 EnableInScopeQuickRegistration`2026-11-05T13:17:24Z````
 EnableInsPaymentDuplicateCheck`2026-11-05T13:17:24Z````
@@ -1489,7 +1489,7 @@ EnableManuallyVerifiedEligibilityRes`2026-11-05T13:17:24Z````
 EnableManualQueryToMedispan`2026-11-05T13:17:24Z````
 EnableMarcoARK`2026-11-05T13:17:24Z````
 EnableMarcoLM`2026-11-05T13:17:24Z````
-EnableMarcoRT`2026-11-05T13:17:24Z````
+EnableMarcoRT`2026-11-05T13:17:24Z``Enables Marco Phoropter device.``4 - optional for all
 EnableMaxillofacialAndOralSurgery`2026-11-05T13:17:24Z````
 EnableMCaidILForm`2026-11-05T13:17:24Z````
 EnableMCaidILHFSForm`2026-11-05T13:17:24Z````
@@ -1511,7 +1511,7 @@ EnableMedicalInsPlanTypeCheck`2026-11-05T13:17:24Z````
 EnableMedicareEdits`2026-11-05T13:17:24Z````
 EnableMedicationDueRenewFeature`2026-11-05T13:17:24Z````
 EnableMedicscanTwainInterface`2026-11-05T13:17:24Z````
-EnableMedispan`2026-11-05T13:17:24Z````
+EnableMedispan`2026-11-05T13:17:24Z``Enables Medi-Span medication database search/selection.``4 - optional for all
 EnableMeditechCatalog`2026-11-05T13:17:24Z````
 EnableMedReconciledInFutureVisitWarning`2026-11-05T13:17:24Z````
 EnableMemberInsightsInAllGaps`2026-11-05T13:17:24Z````
@@ -1525,11 +1525,11 @@ EnableMidmark10Beta`2026-11-05T13:17:24Z````
 EnableMidmarkFax`2026-11-05T13:17:24Z````
 EnableMigrationFramework`2026-11-05T13:17:24Z````
 EnableMinCharCheckAtServer`2026-11-05T13:17:24Z````
-EnableMindRay`2026-11-05T13:17:24Z````
+EnableMindRay`2026-11-05T13:17:24Z``Enables Mindray ePM device integration and vitals monitoring.``4 - optional for all
 enableMixedClaimAssignmentInWQD`2026-11-05T13:17:24Z````
 EnableMobileDirect`2026-11-05T13:17:24Z````
 EnableModernAlerts`2026-11-05T13:17:24Z````
-enableModernPhysicalTherapy`2026-11-05T13:17:24Z````
+enableModernPhysicalTherapy`2026-11-05T13:17:24Z``Enables Modern Physical Therapy feature.``4 - optional for all
 EnableMPILookUpWeb`2026-11-05T13:17:24Z````
 EnableMPILookUpWebNew`2026-11-05T13:17:24Z````
 EnableMSClinical`2026-11-05T13:17:24Z````
@@ -1738,7 +1738,7 @@ EnableRxFill`2026-11-05T13:17:24Z````
 EnableRxHub`2026-11-05T13:17:24Z````
 EnableRxPricing`2026-11-05T13:17:24Z````
 EnableSalesTax`2026-11-05T13:17:24Z````
-enableSameDayMessagePVSCampaign`2026-11-05T13:17:24Z````
+enableSameDayMessagePVSCampaign`2026-11-05T13:17:24Z``Enables same-day Post Visit Survey Campaign delivery option.``4 - optional for all
 EnableSamlLogging`2026-11-05T13:17:24Z````
 EnableSAMLSSOChartCapture`2026-11-05T13:17:24Z````
 EnableSaveAndViewNewAppt`2026-11-05T13:17:24Z````
@@ -1782,7 +1782,7 @@ EnableSmartSearchManifestationCodes2`2026-11-05T13:17:24Z````
 EnableSNOMEDICDMapping`2026-11-05T13:17:24Z````
 EnableSocialHistoryFix`2026-11-05T13:17:24Z````
 EnableSOFODA`2026-11-05T13:17:24Z````
-EnableSoftDeleteFax`2026-11-05T13:17:24Z````
+EnableSoftDeleteFax`2026-11-05T13:17:24Z``Enables Soft Fax Delete functionality.``5 - recommended for all
 EnableSpaceInUsername`2026-11-05T13:17:24Z````
 enableSpecialCharValidationInSurveillanceMode`2026-11-05T13:17:24Z````
 EnableSpecialityForms`2026-11-05T13:17:24Z````
@@ -1806,7 +1806,7 @@ EnableSunohDefaultCountry`2026-11-05T13:17:24Z````
 EnableSunohInterimRecording`2026-11-05T13:17:24Z````
 enableSunohPodcast`2026-11-05T13:17:24Z````
 EnableSunohStripePayment`2026-11-05T13:17:24Z````
-EnableSuperbill`2026-11-05T13:17:24Z````
+EnableSuperbill`2026-11-05T13:17:24Z``Displays Superbill tab on Progress Notes.``4 - optional for all
 EnableSuperbillFlatView`2026-11-05T13:17:24Z````
 EnableSuperbillICD10Search`2026-11-05T13:17:24Z````
 EnableSurescriptsRTBC`2026-11-05T13:17:24Z````
@@ -1835,7 +1835,7 @@ EnableToDo`2026-11-05T13:17:24Z````
 EnableTopconARK`2026-11-05T13:17:24Z````
 EnableTopconKRVision`2026-11-05T13:17:24Z````
 EnableTopconLM`2026-11-05T13:17:24Z````
-EnableTopconRT`2026-11-05T13:17:24Z````
+EnableTopconRT`2026-11-05T13:17:24Z``Enables Topcon Phoropter device.``4 - optional for all
 EnableTopconVision`2026-11-05T13:17:24Z````
 EnableTranscriptNotes`2026-11-05T13:17:24Z````
 EnableTransWorld`2026-11-05T13:17:24Z````
@@ -1859,7 +1859,7 @@ EnableUnivInterfaces`2026-11-05T13:17:24Z````
 EnableUnloadingOfLabreviewScreen`2026-11-05T13:17:24Z````
 EnableUpdatingPDFUploadFlagInClassic`2026-11-05T13:17:24Z````
 EnableUploadDocBlobSupported`2026-11-05T13:17:24Z````
-EnableUrgentCare`2026-11-05T13:17:24Z````
+EnableUrgentCare`2026-11-05T13:17:24Z``Enables the Urgent Care module.``4 - optional for all
 EnableURLParamEncode`2026-11-05T13:17:24Z````
 EnableUsageRestrictionForVisitStatusCode`2026-11-05T13:17:24Z````
 EnableUserImage`2026-11-05T13:17:24Z````
@@ -1883,7 +1883,7 @@ EnableVitalsMonitor`2026-11-05T13:17:24Z````
 EnableVoiceInterface`2026-11-05T13:17:24Z````
 EnableVoidRecreateOnHardClosedClaimsOnly`2026-11-05T13:17:24Z````
 enablevsny`2026-11-05T13:17:24Z````
-EnableWaitingRoom`2026-11-05T13:17:24Z````
+EnableWaitingRoom`2026-11-05T13:17:24Z``Configures/display Waiting Room checked-in patients screen.``4 - optional for all
 EnableWaitTimeMoreThanTwelveHours`2026-11-05T13:17:24Z````
 EnableWarfarinFlowsheet`2026-11-05T13:17:24Z````
 EnableWarningForUnderagePatientsAsOwnRespParty`2026-11-05T13:17:24Z````
@@ -1891,7 +1891,7 @@ EnableWAVaccineHCFAForm`2026-11-05T13:17:24Z````
 EnableWebDocumentEditor`2026-11-05T13:17:24Z````
 EnableWebEditorStreaming`2026-11-05T13:17:24Z````
 EnableWebLogging`2026-11-05T13:17:24Z````
-EnableWebPortal`2026-11-05T13:17:24Z````
+EnableWebPortal`2026-11-05T13:17:24Z``Enables the eClinicalWorks Patient Portal.``5 - recommended for all
 EnableWebViewAOE`2026-11-05T13:17:24Z````
 EnableWebViewSecurityScreen`2026-11-05T13:17:24Z````
 EnableWLForRxFormulary`2026-11-05T13:17:24Z````
@@ -1945,7 +1945,7 @@ ePayCardDeclineMinSupported`2026-11-05T13:17:24Z````
 ePayment`2026-11-05T13:17:24Z````
 ePaymentAccelerated`2026-11-05T13:17:24Z````
 ePaymentAdminURL`2026-11-05T13:17:24Z````
-ePaymentAllowCOFAcrossLocations`2026-11-05T13:17:24Z````
+ePaymentAllowCOFAcrossLocations`2026-11-05T13:17:24Z``ePayments Card on File sharing across facilities (part of COP parity).``4 - optional for all
 ePaymentAuthStatus`2026-11-05T13:17:24Z````
 ePaymentAutoPaymentSelect`2026-11-05T13:17:24Z````
 ePaymentCOFPtLevel`2026-11-05T13:17:24Z````
@@ -1973,7 +1973,7 @@ EPCS_AppSrv_Protocol`2026-11-05T13:17:24Z````
 EPCS_Srv_HostName`2026-11-05T13:17:24Z````
 EpcsApuActivationUrl`2026-11-05T13:17:24Z````
 EPCSLicenseKeyAutomation`2026-11-05T13:17:24Z````
-EPCSProvidertoProviderNewRx`2026-11-05T13:17:24Z````
+EPCSProvidertoProviderNewRx`2026-11-05T13:17:24Z``Enables Provider-to-Provider EPCS prescribing.``4 - optional for all
 EPDSCPTCodeForSF`2026-11-05T13:17:24Z````
 EPrescriptionComments`2026-11-05T13:17:24Z```system`1 - ignore
 EPrescriptionNotes`2026-11-05T13:17:24Z````
@@ -2014,7 +2014,7 @@ ERA_PostCASCodesAsIsForCLaimCAS`2026-11-05T13:17:24Z````
 ERA_PostCASCodesAsIsForManualEob`2026-11-05T13:17:24Z````
 ERA_PostOnlyReadyToPost`2026-11-05T13:17:24Z````
 ERA_PostPaymentToFirsteCWClaimInsurance`2026-11-05T13:17:24Z````
-ERA_readytopost`2026-11-05T13:17:24Z````
+ERA_readytopost`2026-11-05T13:17:24Z``Activates Ready To Post feature on ERA window.``5 - recommended for all
 ERA_Split_By_Practice`2026-11-05T13:17:24Z````
 ERA_T1015PostingWriteoff`2026-11-05T13:17:24Z````
 era_TypeOfEraPaymentNON`2026-11-05T13:17:24Z````
@@ -2041,7 +2041,7 @@ ERAZeroPartialPayment`2026-11-05T13:17:24Z````
 EReqImpression`2026-11-05T13:17:24Z````
 eReqOperativeNotesinformation`2026-11-05T13:17:24Z````
 EReqRecommendation`2026-11-05T13:17:24Z````
-ERSupported`2026-11-05T13:17:24Z````
+ERSupported`2026-11-05T13:17:24Z``Enables the ER module.``4 - optional for all
 eRxConnectionTimeout`2026-11-05T13:17:24Z````
 eRXSSIDProofing`2026-11-05T13:17:24Z````
 EvaEndPoint`2026-11-05T13:17:24Z````
@@ -2182,7 +2182,7 @@ gChartV2Supported`2026-11-05T13:17:24Z````
 GCM_hashkey`2026-11-05T13:17:24Z````
 GEHeightMeasurement`2026-11-05T13:17:24Z````
 GeneralNotes`2026-11-05T13:17:24Z````
-GenerateCcdaOnEmr`2026-11-05T13:17:24Z````
+GenerateCcdaOnEmr`2026-11-05T13:17:24Z``Enables C-CDA document generation.``5 - recommended for all
 GenerateDIForProvider`2026-11-05T13:17:24Z````
 GenerateDIPACSLinkURL`2026-11-05T13:17:24Z````
 GenerateEcrCcdaOnEmr`2026-11-05T13:17:24Z````
@@ -2268,7 +2268,7 @@ HealowChatPushNotificationEnvironment`2026-11-05T13:17:24Z````
 HealowChatPushNotificationTopic`2026-11-05T13:17:24Z````
 HealowChatServer`2026-11-05T13:17:24Z````
 HealowChatSigningKey`2026-11-05T13:17:24Z````
-healowConnectEnabled`2026-11-05T13:17:24Z````
+healowConnectEnabled`2026-11-05T13:17:24Z``Displays Healow Connect button.``4 - optional for all
 HealowDataSupported`2026-11-05T13:17:24Z````
 healowemrclient_id`2026-11-05T13:17:24Z````
 healowemrclient_redirecturi`2026-11-05T13:17:24Z````
@@ -2365,7 +2365,7 @@ HideDentalInsOnOrderForm`2026-11-05T13:17:24Z````
 HideDJellybeanAllOutstandingDateForAssignedTo`2026-11-05T13:17:24Z````
 hideERefillRightPanelByDefault`2026-11-05T13:17:24Z````
 HideGEMSPreLoadICD10Option`2026-11-05T13:17:24Z````
-HideHCCV24`2026-11-05T13:17:24Z````
+HideHCCV24`2026-11-05T13:17:24Z``Hides HCC V24 codes on Assessment window (show V28 only).``5 - recommended for all
 HideMedicalElectronicEPA`2026-11-05T13:17:24Z````
 HidePatientSelectButtonInHub`2026-11-05T13:17:24Z````
 HideRightAndTopPanels`2026-11-05T13:17:24Z````
@@ -2379,7 +2379,7 @@ hNowShowOnODA`2026-11-05T13:17:24Z````
 HonorModeOfBehaviorPrintFaxTransmission`2026-11-05T13:17:24Z````
 HonorPathwayEntryPrintFaxCompanyTransmission`2026-11-05T13:17:24Z````
 honorPluginForSendScreenPrint`2026-11-05T13:17:24Z````
-HospitalizationHxMandatoryDate`2026-11-05T13:17:24Z````
+HospitalizationHxMandatoryDate`2026-11-05T13:17:24Z``Makes Hospitalization Date field mandatory option visible.``4 - optional for all
 HospitalizationNotes`2026-11-05T13:17:24Z````
 howptmismatchwarning`2026-11-05T13:17:24Z````
 HPI`2026-11-05T13:17:24Z```system`1 - ignore
@@ -2583,11 +2583,11 @@ isGuideWellEnabled`2026-11-05T13:17:24Z````
 ish2henable`2026-11-05T13:17:24Z````
 isHCMW`2026-11-05T13:17:24Z````
 ishealowAwareenabled`2026-11-05T13:17:24Z````
-isHealowConsentFormEnabled`2026-11-05T13:17:24Z````
-isHealowIntakeConsentFormEnabled`2026-11-05T13:17:24Z````
+isHealowConsentFormEnabled`2026-11-05T13:17:24Z``Enables ASC module for healow consent forms context.``4 - optional for all
+isHealowIntakeConsentFormEnabled`2026-11-05T13:17:24Z``Shows healow Consent Forms when clicking the healow icon.``4 - optional for all
 isHealowNowEnabled`2026-11-05T13:17:24Z````
 isHealowPlusEnabled`2026-11-05T13:17:24Z````
-ishealowsurveyenabled`2026-11-05T13:17:24Z````
+ishealowsurveyenabled`2026-11-05T13:17:24Z``Access to healow Survey.``4 - optional for all
 isInsuranceTypeEnable`2026-11-05T13:17:24Z````
 isJopariUploadEnabled`2026-11-05T13:17:24Z````
 IsLacerationEnabled`2026-11-05T13:17:24Z````
@@ -2617,7 +2617,7 @@ IsSIUOutboundConfigured`2026-11-05T13:17:24Z````
 IsSIUOutboundTelConfigured`2026-11-05T13:17:24Z````
 IsSIUOutboundVirtualTelConfigured`2026-11-05T13:17:24Z````
 isSunohStandaloneEnabled`2026-11-05T13:17:24Z````
-isSurveySignTextblobTagenabled`2026-11-05T13:17:24Z````
+isSurveySignTextblobTagenabled`2026-11-05T13:17:24Z``Enables consent form signature text blob/tags.``4 - optional for all
 isUncompReportActivated`2026-11-05T13:17:24Z````
 isValidEcheckinLicense`2026-11-05T13:17:24Z````
 isVersionUpgraded`2026-11-05T13:17:24Z````
@@ -2809,7 +2809,7 @@ MedispanRxEducationURL`2026-11-05T13:17:24Z````
 MeditechCatalogPath`2026-11-05T13:17:24Z````
 MedSummary_Limit`2026-11-05T13:17:24Z````
 MedVantx_UseFtpProtocolOnServer`2026-11-05T13:17:24Z````
-MergedOfficeVisitsWindow`2026-11-05T13:17:24Z````
+MergedOfficeVisitsWindow`2026-11-05T13:17:24Z``Merges Tracking Board features into Office Visits; affects print/fax defaults.``4 - optional for all
 MergeIndividualLetters`2026-11-05T13:17:24Z````
 MessagingWorkFlow`2026-11-05T13:17:24Z````
 MessengerNotification`2026-11-05T13:17:24Z````
@@ -3167,7 +3167,7 @@ PDFStatements`2026-11-05T13:17:24Z````
 PDMPGatewayUrl`2026-11-05T13:17:24Z````
 PDMPHubBaseUrl`2026-11-05T13:17:24Z````
 PDMPHubServerUrl`2026-11-05T13:17:24Z````
-PDMPMultipleVendors`2026-11-05T13:17:24Z````
+PDMPMultipleVendors`2026-11-05T13:17:24Z``Activates multiple PDMP vendors.``4 - optional for all
 PDMPVersion`2026-11-05T13:17:24Z````
 PeakFlowVitalId`2026-11-05T13:17:24Z````
 PediatricStructQuestSupported`2026-11-05T13:17:24Z````
@@ -3235,10 +3235,10 @@ pophealth_cpc_url_token`2026-11-05T13:17:24Z````
 Pophealth_Cura`2026-11-05T13:17:24Z````
 pophealth_cura_cloud_url`2026-11-05T13:17:24Z````
 pophealth_global`2026-11-05T13:17:24Z````
-Pophealth_HCC`2026-11-05T13:17:24Z````
+Pophealth_HCC`2026-11-05T13:17:24Z``Displays Population Health HCC Items.``4 - optional for all
 pophealth_hcc_blank_initial_load`2026-11-05T13:17:24Z````
 pophealth_hcc_externaldata`2026-11-05T13:17:24Z````
-Pophealth_HCC_HHS`2026-11-05T13:17:24Z````
+Pophealth_HCC_HHS`2026-11-05T13:17:24Z``Enables Population Health HCC module Version 2.``4 - optional for all
 pophealth_hcc_loadallpatientids`2026-11-05T13:17:24Z````
 pophealth_hcc_max_insurance`2026-11-05T13:17:24Z````
 pophealth_hcc_new`2026-11-05T13:17:24Z````
@@ -3267,8 +3267,8 @@ pophealth_providerhub_ehrtiles`2026-11-05T13:17:24Z````
 pophealth_ptdrill_acg`2026-11-05T13:17:24Z````
 pophealth_realtime_calculation`2026-11-05T13:17:24Z````
 Pophealth_Ri`2026-11-05T13:17:24Z````
-pophealth_vbc`2026-11-05T13:17:24Z````
-pophealth_vbcflag`2026-11-05T13:17:24Z````
+pophealth_vbc`2026-11-05T13:17:24Z``Enables VBC Dashboard and related features.``4 - optional for all
+pophealth_vbcflag`2026-11-05T13:17:24Z``PHM Member Attribution flagging and agreement name assignment.``4 - optional for all
 PopulateClaimProviders`2026-11-05T13:17:24Z````
 PopulateHPSA`2026-11-05T13:17:24Z````
 PopulateOnLoadAsmtLookup`2026-11-05T13:17:24Z````
@@ -3413,7 +3413,7 @@ psychAssessments`2026-11-05T13:17:24Z````
 ptAuthToken`2026-11-05T13:17:24Z````
 PTCentricPacs10ePlugIn`2026-11-05T13:17:24Z````
 PtCentricVisitSummarySupported`2026-11-05T13:17:24Z````
-PtChargeDetail`2026-11-05T13:17:24Z````
+PtChargeDetail`2026-11-05T13:17:24Z``Enables printing charge details on the patient's receipt.``4 - optional for all
 PtCommunicationToken`2026-11-05T13:17:24Z````
 PtDemoToProperCase`2026-11-05T13:17:24Z````
 PTDocDownloadFileNameNotAllowSpecialChar`2026-11-05T13:17:24Z````
@@ -3493,11 +3493,11 @@ QRSDatabaseAuthMode`2026-11-05T13:17:24Z````
 QRSDatabaseInstanceName`2026-11-05T13:17:24Z````
 QRSDatabaseMode`2026-11-05T13:17:24Z````
 QRSDatabasePath`2026-11-05T13:17:24Z````
-QRSEcgEnabled`2026-11-05T13:17:24Z````
+QRSEcgEnabled`2026-11-05T13:17:24Z``Enables the QRS ECG device integration.``4 - optional for all
 QrsEcgPartNumber`2026-11-05T13:17:24Z````
 QRSOximetryEnabled`2026-11-05T13:17:24Z````
 QRSPath`2026-11-05T13:17:24Z````
-QRSSpiroEnabled`2026-11-05T13:17:24Z````
+QRSSpiroEnabled`2026-11-05T13:17:24Z``Enables the QRS SPIRO device integration.``4 - optional for all
 QrsSpiroPartNumber`2026-11-05T13:17:24Z````
 QualityMeasureSelectionLimit`2026-11-05T13:17:24Z````
 QualityMetricGroupId`2026-11-05T13:17:24Z````
@@ -3531,7 +3531,7 @@ RCMAddPatientPayment`2026-11-05T13:17:24Z````
 RCMAdministrator`2026-11-05T13:17:24Z````
 RCMApuMaxConcurrentExports`2026-11-05T13:17:24Z````
 RCMByPassProxy`2026-11-05T13:17:24Z````
-RCMClient`2026-11-05T13:17:24Z````
+RCMClient`2026-11-05T13:17:24Z``Enables the RCM module / triggers practice sync Spoke→CBO.``4 - optional for all
 RCMDummyCPT`2026-11-05T13:17:24Z````
 RCMEDPRACTICECHANGES`2026-11-05T13:17:24Z````
 RCMEncLocalKey`2026-11-05T13:17:24Z````
@@ -3600,7 +3600,7 @@ RefundCheckTemplateDocName`2026-11-05T13:17:24Z````
 RegIdTypeName`2026-11-05T13:17:24Z````
 registeredForFHIR`2026-11-05T13:17:24Z````
 RegisterERS`2026-11-05T13:17:24Z````
-RegistrationRuleEngine`2026-11-05T13:17:24Z````
+RegistrationRuleEngine`2026-11-05T13:17:24Z``Enables Registration tab on Rules Engine window.``4 - optional for all
 REGISTRY_DEFAULT_TIMEOUT_IN_MINUTES`2026-11-05T13:17:24Z````
 REGISTRY_INIT`2026-11-05T13:17:24Z````
 RegistryReportsHide`2026-11-05T13:17:24Z````
@@ -3726,7 +3726,7 @@ scribeBackwardCompatibility`2026-11-05T13:17:24Z````
 ScribeEndPoint`2026-11-05T13:17:24Z````
 SeaworldRxDaysToStop`2026-11-05T13:17:24Z````
 SecondLanguage`2026-11-05T13:17:24Z````
-SecuritySettingPermissionRequest`2026-11-05T13:17:24Z````
+SecuritySettingPermissionRequest`2026-11-05T13:17:24Z``Enables Permission Requests button on Security Settings.``5 - recommended for all
 SelectDefaltEncounterSetting`2026-11-05T13:17:24Z````
 SelectExeDefaultView`2026-11-05T13:17:24Z````
 selectPreviousProviderForSpeciality`2026-11-05T13:17:24Z````
@@ -3734,7 +3734,7 @@ Send_ASC_Appointments`2026-11-05T13:17:24Z````
 SendADTonSuicideWatch`2026-11-05T13:17:24Z````
 SendAppntConfEmail`2026-11-05T13:17:24Z````
 SendAppoinmentReminderTimeZoneWise`2026-11-05T13:17:24Z````
-sendAssessmentAndTreatmentNotesForPCC`2026-11-05T13:17:24Z````
+sendAssessmentAndTreatmentNotesForPCC`2026-11-05T13:17:24Z``Sends assessments and treatment notes in PCC Progress Notes details.``4 - optional for all
 SendCCROnReferral`2026-11-05T13:17:24Z````
 SendCopayLinkToPatient`2026-11-05T13:17:24Z````
 sendCouponBenefitsInErxRequest`2026-11-05T13:17:24Z````
@@ -3766,7 +3766,7 @@ SendWebEncounterfromPatientPortal`2026-11-05T13:17:24Z````
 SendWebEncountersReplyToPatient`2026-11-05T13:17:24Z````
 SendWebEncounterUpdates`2026-11-05T13:17:24Z````
 SensitiveBlockSupported`2026-11-05T13:17:24Z````
-SensitiveCodeBlockConfiguration`2026-11-05T13:17:24Z````
+SensitiveCodeBlockConfiguration`2026-11-05T13:17:24Z``Activates Sensitive Data Blocks; impacts print/fax defaults with MergedOfficeVisitsWindow.``5 - recommended for all
 Sentry_CursoryCheck_PatternId`2026-11-05T13:17:24Z````
 Sentry_MissingFields_Logging_Enabled`2026-11-05T13:17:24Z```system`1 - ignore
 ServerTimeStamp`2026-11-05T13:17:24Z````
@@ -3962,7 +3962,7 @@ SortLabByOrderDate`2026-11-05T13:17:24Z````
 sortOrdersByCollDateAndTime`2026-11-05T13:17:24Z````
 SpanishSupported`2026-11-05T13:17:24Z````
 SpecialCharSupported`2026-11-05T13:17:24Z````
-SpecialtiesInTelephoneEncounter`2026-11-05T13:17:24Z````
+SpecialtiesInTelephoneEncounter`2026-11-05T13:17:24Z``Enables Specialties drop-down in Telephone Encounter Virtual Visit.``4 - optional for all
 SpecialtyFormModKey`2026-11-05T13:17:24Z````
 SpecialtyFormsDynamicForms`2026-11-05T13:17:24Z````
 SpecialtyFormsPDFWriter`2026-11-05T13:17:24Z````
@@ -4007,7 +4007,7 @@ sunohAllowExactMatchForImmunizations`2026-11-05T13:17:24Z````
 sunohAllowExactMatchForLabsDIOrProcedures`2026-11-05T13:17:24Z````
 SunohAnalyticsTimeTracking`2026-11-05T13:17:24Z````
 SunohAutoWSReconnect`2026-11-05T13:17:24Z````
-SunohCommunitySupport`2026-11-05T13:17:24Z````
+SunohCommunitySupport`2026-11-05T13:17:24Z``Configures Screenings & Structured Data for Sunoh recommendations.``4 - optional for all
 SunohConsentRetentionPeriodInDays`2026-11-05T13:17:24Z````
 SunoheClinisenseLabDIProcOrders`2026-11-05T13:17:24Z````
 SunohEClinisenseNoOfAssessmentToBeFetched`2026-11-05T13:17:24Z````
@@ -4062,7 +4062,7 @@ SupressMasterFeeSchCarryOver`2026-11-05T13:17:24Z````
 SurchargefeeEnabled`2026-11-05T13:17:24Z````
 SurescriptsServerUrl`2026-11-05T13:17:24Z````
 SurgicalHistoryNotes`2026-11-05T13:17:24Z````
-SurgicalHxMandatoryDate`2026-11-05T13:17:24Z````
+SurgicalHxMandatoryDate`2026-11-05T13:17:24Z``Makes Surgical History Date field mandatory option visible.``4 - optional for all
 SurgicalInterface`2026-11-05T13:17:24Z````
 SurgicalNotes`2026-11-05T13:17:24Z````
 syncDocServerDataToEcheckinForHealowNow`2026-11-05T13:17:24Z````
@@ -4109,7 +4109,7 @@ TitmusMobileDevicePath`2026-11-05T13:17:24Z````
 TMPisClaiamRuleMigrated`2026-11-05T13:17:24Z````
 TomcatServerLogDays`2026-11-05T13:17:24Z````
 totalRowsToBeDeletedFromIhe`2026-11-05T13:17:24Z````
-TrackingBoard`2026-11-05T13:17:24Z````
+TrackingBoard`2026-11-05T13:17:24Z``Shows Vitals, Orders, Enc. Notes columns on Office Visits (with MergedOfficeVisitsWindow).``4 - optional for all
 TransactionSendingMsgRole`2026-11-05T13:17:24Z```system`1 - ignore
 Transcription`2026-11-05T13:17:24Z```system`1 - ignore
 Transcription_ExamId`2026-11-05T13:17:24Z```system`1 - ignore
@@ -4294,7 +4294,7 @@ Vision-Color test type`2026-11-05T13:17:24Z````
 Vision-Stereopsis test type`2026-11-05T13:17:24Z````
 VisionExam`2026-11-05T13:17:24Z````
 visionplaninsurancesetup`2026-11-05T13:17:24Z````
-visionUSEnable`2026-11-05T13:17:24Z````
+visionUSEnable`2026-11-05T13:17:24Z``Enables the Vision module.``4 - optional for all
 visitBasedQuestionnaireSupported`2026-11-05T13:17:24Z````
 VisitCategories`2026-11-05T13:17:24Z````
 VisitCodes`2026-11-05T13:17:24Z````
