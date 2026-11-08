@@ -10,7 +10,7 @@ import { additionalHeader } from '../../src/lib/data/schema.ts';
 import { DataError } from '../../src/lib/data/types.ts';
 import { exportText, fixture, rptText, schema } from './helpers.ts';
 
-const H3 = ['key', 'support_remarks', 'display_name'];
+const H3 = ['key', 'ecw_remarks', 'display_name'];
 const AH = additionalHeader(schema);
 const TS = '2026-11-04T14:03:27Z';
 
@@ -44,7 +44,7 @@ describe('record reader', () => {
 
 	it('reads multi-line values in middle and last fields, with mixed endings and blank lines', () => {
 		const text =
-			'\uFEFFkey`support_remarks`display_name\r\na`line1\nline2\r\n\r\nline4`x\r\nb`r`first\r\n\r\nthird\r\nc`r`NULL\r\n';
+			'\uFEFFkey`ecw_remarks`display_name\r\na`line1\nline2\r\n\r\nline4`x\r\nb`r`first\r\n\r\nthird\r\nc`r`NULL\r\n';
 		const { doc } = readItemkeysArchive(text);
 		expect(doc.records.map((r) => r.fields)).toEqual([
 			['a', 'line1\nline2\n\nline4', 'x'],
@@ -126,7 +126,7 @@ describe('itemkeys export', () => {
 	});
 
 	it('rejects a header mismatch, including the old 5-column header', () => {
-		const old = ['key', 'support_remarks', 'display_name', 'description', 'category'];
+		const old = ['key', 'ecw_remarks', 'display_name', 'description', 'category'];
 		expect(errorsOf(() => readItemkeysExport(exportText([['a', '', '', '', '']], old)))).toEqual([
 			expect.stringMatching(/^1:Header mismatch/)
 		]);
@@ -202,10 +202,10 @@ describe('writer', () => {
 	});
 
 	it('preserves mixed line endings in untouched records', () => {
-		const text = '\uFEFFkey`support_remarks`display_name\r\na`x\ny`z\r\nb`r`d\r\n';
+		const text = '\uFEFFkey`ecw_remarks`display_name\r\na`x\ny`z\r\nb`r`d\r\n';
 		const { doc } = readItemkeysArchive(text);
 		doc.records[1] = withFields(doc.records[1], ['b', 'r2', 'd']);
-		expect(writeRpt(doc)).toBe('\uFEFFkey`support_remarks`display_name\r\na`x\ny`z\r\nb`r2`d\r\n');
+		expect(writeRpt(doc)).toBe('\uFEFFkey`ecw_remarks`display_name\r\na`x\ny`z\r\nb`r2`d\r\n');
 	});
 
 	it('inserts and removes whole records at positions', () => {
@@ -225,9 +225,9 @@ describe('writer', () => {
 	});
 
 	it('terminates a final record that had no line break before appending', () => {
-		const { doc } = readItemkeysArchive('key`support_remarks`display_name\na``');
+		const { doc } = readItemkeysArchive('key`ecw_remarks`display_name\na``');
 		doc.records.push(newRecord(['b', '', '']));
-		expect(writeRpt(doc)).toBe('key`support_remarks`display_name\na``\nb``\n');
+		expect(writeRpt(doc)).toBe('key`ecw_remarks`display_name\na``\nb``\n');
 	});
 
 	it('refuses to write a delimiter inside a value', () => {

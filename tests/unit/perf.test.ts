@@ -88,7 +88,7 @@ describe('search performance', () => {
 			sortResults(
 				ds,
 				Int32Array.from({ length: n }, (_, i) => i),
-				{ column: 'support_remarks', desc: false }
+				{ column: 'ecw_remarks', desc: false }
 			);
 			console.log(`${n} rows: first sort by remarks ${(performance.now() - sorted).toFixed(0)} ms`);
 		});

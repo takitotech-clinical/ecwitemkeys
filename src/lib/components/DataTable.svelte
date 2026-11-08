@@ -1,8 +1,8 @@
 <!-- Desktop table (≥ 900 px): sticky header, click-to-sort, 2-line clamps (PLAN §4.4). -->
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import type { Column, Dataset } from '#lib/data/model.ts';
 	import type { Sort } from '#lib/search/sort.ts';
+	import { resolve } from '$app/paths';
 	import Badges from './Badges.svelte';
 	import Timestamp from './Timestamp.svelte';
 	import Value from './Value.svelte';
@@ -37,7 +37,7 @@
 	const WIDTHS: Record<string, string> = {
 		key: 'minmax(220px, 1.3fr)',
 		display_name: 'minmax(160px, 1fr)',
-		support_remarks: 'minmax(240px, 2fr)',
+		ecw_remarks: 'minmax(240px, 2fr)',
 		description: 'minmax(220px, 1.6fr)',
 		category: '96px',
 		added: '112px',

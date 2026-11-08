@@ -10,7 +10,7 @@ export const FILES = {
 	approvers: 'config/approvers.json'
 } as const;
 
-export const ITEMKEYS_HEADER = ['key', 'support_remarks', 'display_name'];
+export const ITEMKEYS_HEADER = ['key', 'ecw_remarks', 'display_name'];
 
 /** The SSMS export: footer required, record count checked against it. */
 export function readItemkeysExport(text: string, file: string = FILES.itemkeys): ReadResult {

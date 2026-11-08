@@ -1,4 +1,4 @@
-﻿key`support_remarks`display_name
+﻿key`ecw_remarks`display_name
 10eLoginPageContent`This is used to enable login page content`10eLoginPageContent
 277CA_RejectionPriority`Rejection has a highest priority than Acceptance to change the claim status update.`
 277CA_Split_By_Practice`Split 277CA by Enterprise Practice ID`NULL

@@ -1,7 +1,7 @@
 <!-- Mobile layout (< 900 px): one card per row (PLAN §4.4). -->
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import type { Dataset } from '#lib/data/model.ts';
+	import { resolve } from '$app/paths';
 	import Badges from './Badges.svelte';
 	import Value from './Value.svelte';
 	import VirtualList from './VirtualList.svelte';
@@ -29,10 +29,10 @@
 
 	const ROW = 124;
 	const iDisplay = $derived(ds.byId.get('display_name')!.index);
-	const iRemarks = $derived(ds.byId.get('support_remarks')!.index);
+	const iRemarks = $derived(ds.byId.get('ecw_remarks')!.index);
 	const enums = $derived(ds.columns.filter((c) => c.type === 'enum' && !hidden.includes(c.id)));
 	const showDisplay = $derived(!hidden.includes('display_name'));
-	const showRemarks = $derived(!hidden.includes('support_remarks'));
+	const showRemarks = $derived(!hidden.includes('ecw_remarks'));
 
 	let list: VirtualList | undefined = $state();
 	export const scrollToIndex = (i: number) => list?.scrollToIndex(i);

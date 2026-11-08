@@ -131,11 +131,11 @@ export function buildFacets(ds: Dataset, pending: Set<string> | null): Facet[] {
 			}
 		)
 	);
-	const remarks = col('support_remarks').index;
+	const remarks = col('ecw_remarks').index;
 	facets.push(
 		facetFrom(
 			'remarks',
-			'Support remarks',
+			'ecw remarks',
 			[
 				{ value: 'set', label: 'Set' },
 				{ value: 'empty', label: 'Empty' }

@@ -40,7 +40,7 @@ keeps git from changing their bytes.
 
 1. In SSMS, run the query below with _Results to File_ and a backtick delimiter:
    ```sql
-   SELECT i.name 'key', i.supportRemarks 'support_remarks', i.displayname 'display_name'
+   SELECT i.name 'key', i.supportRemarks 'ecw_remarks', i.displayname 'display_name'
    FROM mobiledoc.dbo.itemkeys i
    ORDER BY i.name
    ```

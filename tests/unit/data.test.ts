@@ -38,7 +38,7 @@ describe('adoption', () => {
 			'',
 			'system'
 		]);
-		expect(writeRpt(archive)).toBe('\uFEFFkey`support_remarks`display_name\r\n');
+		expect(writeRpt(archive)).toBe('\uFEFFkey`ecw_remarks`display_name\r\n');
 	});
 
 	it('differs from the seed only by the inserted columns and the removed footer', () => {
@@ -90,7 +90,7 @@ describe('join and diagnostics', () => {
 
 	it('collects diagnostics and the last sync', () => {
 		expect(j.diagnostics.whitespaceKeys).toEqual(['MIPS_MigrateSettings_2021 ']);
-		expect(j.diagnostics.multilineValues).toEqual([{ key: 'HPINotes', column: 'support_remarks' }]);
+		expect(j.diagnostics.multilineValues).toEqual([{ key: 'HPINotes', column: 'ecw_remarks' }]);
 		expect(j.diagnostics.syncState).toEqual({ missingActiveRow: [], activeNotInItemkeys: [] });
 		expect(j.lastSync).toEqual({
 			at: '2026-12-15T15:00:00Z',
@@ -179,7 +179,7 @@ describe('validation', () => {
 		).doc;
 		const arc = readItemkeysArchive(
 			rptText(
-				['key', 'support_remarks', 'display_name'],
+				['key', 'ecw_remarks', 'display_name'],
 				[
 					['a', '', ''],
 					['b', '', '']

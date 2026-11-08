@@ -20,7 +20,7 @@ time. The app records when each key first appeared and when it disappeared.
 | Edits                 | Users propose edits to the **user-editable additional columns only**: never `key`, never itemkeys columns, never the managed `added`/`expired` dates. Proposals become **GitHub Issues** created from a prefilled issue form.                                                                                                                     |
 | Approval              | **In-app review queue.** Approver list at launch: **`TriStarGodAI`**, extendable in `config/approvers.json`. Approving applies the change through a GitHub Action, which commits and redeploys.                                                                                                                                                   |
 | Discussion            | **GitHub Discussions**, one thread per key, embedded in the app with **giscus**.                                                                                                                                                                                                                                                                  |
-| itemkeys export       | `SELECT i.name 'key', i.supportRemarks 'support_remarks', i.displayname 'display_name' FROM mobiledoc.dbo.itemkeys i ORDER BY i.name`, saved by SSMS as `source/itemkeys.rpt`.                                                                                                                                                                    |
+| itemkeys export       | `SELECT i.name 'key', i.supportRemarks 'ecw_remarks', i.displayname 'display_name' FROM mobiledoc.dbo.itemkeys i ORDER BY i.name`, saved by SSMS as `source/itemkeys.rpt`.                                                                                                                                                                    |
 | itemkeys refresh      | The owner may **replace `source/itemkeys.rpt` with a new sorted export at any time**. It may have more or fewer keys than the last one. The app syncs `additional.rpt` automatically (§2.6).                                                                                                                                                      |
 | itemkeys format       | A raw SSMS "results to file" export: UTF-8 **with BOM**, **CRLF**, one header line, the literal `NULL` for SQL NULL, and an SSMS **footer** (blank line, `(N rows affected)`, blank lines, `Completion time: …`). Values may contain line breaks and leading or trailing whitespace. Rows are in SQL Server collation order by key.               |
 | Additional layout     | **Dense, auto-append.** There is one row per key ever seen. New keys are inserted automatically, in itemkeys order, when a new export arrives. Rows are never deleted; keys that disappear get an `expired` date.                                                                                                                                 |
@@ -203,7 +203,7 @@ committing.
 2. **Expired keys** (row has an empty `expired`, key not in `K`):
    - set `expired = now`;
    - copy the key's itemkeys row from the previous export into `itemkeys.expired.rpt`, so the
-     app can still show its last-known `support_remarks` and `display_name`.
+     app can still show its last-known `ecw_remarks` and `display_name`.
 3. **Returning keys** (row has a non-empty `expired`, key back in `K`): **clear `expired`**,
    keep `added` unchanged, and remove the key from `itemkeys.expired.rpt`.
 4. **Everything else** is untouched.
@@ -265,18 +265,18 @@ These are maintainer scripts. Each one writes canonical, validated output.
 
 | Fact                   | Value                                                                                                                                                                   |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Columns                | ``key`support_remarks`display_name``                                                                                                                                    |
+| Columns                | ``key`ecw_remarks`display_name``                                                                                                                                    |
 | Records                | 4,358, equal to the footer's `(4358 rows affected)`                                                                                                                     |
 | Envelope               | UTF-8 BOM, CRLF, footer of `\r\n\r\n(4358 rows affected)\r\n\r\n\r\nCompletion time: …\r\n`                                                                             |
 | Delimiters per record  | exactly 2 in every record; no backtick inside any value                                                                                                                 |
-| Multi-line values      | 9 in `support_remarks`, 1 in `display_name` (`EnableMultipleCPTForNYVehicleForm`, 3 physical lines). Inner line breaks are a mix of CRLF and LF, including blank lines. |
-| Surrounding whitespace | 6 keys with a trailing space (`MIPS_MigrateSettings_2021 ` … `_2026 `); 64 `support_remarks` and 10 `display_name` values                                               |
+| Multi-line values      | 9 in `ecw_remarks`, 1 in `display_name` (`EnableMultipleCPTForNYVehicleForm`, 3 physical lines). Inner line breaks are a mix of CRLF and LF, including blank lines. |
+| Surrounding whitespace | 6 keys with a trailing space (`MIPS_MigrateSettings_2021 ` … `_2026 `); 64 `ecw_remarks` and 10 `display_name` values                                               |
 | `NULL`                 | `display_name` 3,298                                                                                                                                                    |
-| Empty string           | `support_remarks` 998, `display_name` 212                                                                                                                               |
-| Max lengths            | key 50, `support_remarks` 255, `display_name` 99                                                                                                                        |
+| Empty string           | `ecw_remarks` 998, `display_name` 212                                                                                                                               |
+| Max lengths            | key 50, `ecw_remarks` 255, `display_name` 99                                                                                                                        |
 | Keys                   | unique, also unique case-insensitively and after trimming; characters include space, `-`, `.`, `/`, `&`, `+`                                                            |
 | Order                  | SQL Server collation order (§2.3 rule 5)                                                                                                                                |
-| `\|` in values         | 2 `support_remarks` values (harmless now that the delimiter is a backtick)                                                                                              |
+| `\|` in values         | 2 `ecw_remarks` values (harmless now that the delimiter is a backtick)                                                                                              |
 | Seed `additional.rpt`  | 4,358 rows in the same order, ``key`description`category``, 128 `category = system`, with an SSMS footer                                                                |
 
 Size: the rpts are about 400 KB and 120 KB. The generated JSON should be about 140 KB
@@ -314,7 +314,7 @@ field that is open. Parsing is deterministic.
    normalized to `\n` in memory, and in itemkeys files only the exact string `NULL` becomes
    `null`.
 7. **Headers are exact:**
-   - itemkeys files: ``key`support_remarks`display_name``;
+   - itemkeys files: ``key`ecw_remarks`display_name``;
    - additional: `key` plus the schema's columns.
 8. **Keys are never trimmed**, must not contain line breaks, and must be unique.
 
@@ -332,7 +332,7 @@ field that is open. Parsing is deterministic.
    with an empty `expired` is in itemkeys. In the deploy pipeline this always holds, because
    sync runs first. In PR CI a mismatch is a warning: "run `pnpm data:sync`".
 3. **Join.** Rows are driven by `additional.rpt`, which lists every key ever seen, in file order.
-   - **Active keys** take `support_remarks` and `display_name` from `itemkeys.rpt`.
+   - **Active keys** take `ecw_remarks` and `display_name` from `itemkeys.rpt`.
    - **Expired keys** take them from `itemkeys.expired.rpt`, marked "last known", or leave them
      empty if those values aren't available.
 4. Collect diagnostics:
@@ -349,7 +349,7 @@ field that is open. Parsing is deterministic.
    {
      "generatedAt": "2026-11-04T14:00:00Z",
      "exportedAt": "2026-11-03T18:06:30-05:00",
-     "itemkeysColumns": ["key","support_remarks","display_name"],
+     "itemkeysColumns": ["key","ecw_remarks","display_name"],
      "additionalSchema": { "...schema..." },
      "rows": [["10eLoginPageContent","This is used to enable login page content","10eLoginPageContent","2026-11-04T14:03:27Z","","",""], "..."],
      "lastKnown": [123, 456],
@@ -453,7 +453,7 @@ at 50k rows**, 60 fps scrolling, and **under 2 s first load** on 4G.
     the same local day are shown with their times.
   - **Expired:** the same, for expiry timestamps.
   - **Enum columns** from the schema (initially `category`: `system` / not set).
-  - **Derived:** "Has description", "Display name" (set / empty / NULL), "Support remarks"
+  - **Derived:** "Has description", "Display name" (set / empty / NULL), "ecw remarks"
     (set / empty), "Has discussion", and "Has pending proposal".
   - Values within one facet are ORed; different facets are ANDed. Counts are recomputed
     against the other active filters.
@@ -469,7 +469,7 @@ at 50k rows**, 60 fps scrolling, and **under 2 s first load** on 4G.
   dependency whose Svelte 5 support is uncertain, and only visible rows plus overscan are in
   the DOM.
 - **Desktop (≥ 900 px)**: a `DataTable` with sticky header, click-to-sort, a column show/hide
-  menu (saved in localStorage), and `support_remarks` and `description` clamped to 2 lines
+  menu (saved in localStorage), and `ecw_remarks` and `description` clamped to 2 lines
   (expand in detail). Uses `role="grid"` with `aria-rowcount` and `aria-rowindex` for screen
   readers.
 - **Mobile (< 900 px)**: a `CardList` where each card shows the key, display name, a category
@@ -902,7 +902,7 @@ raised before it is built.
 - Facebook or other non-GitHub login (needs a server component).
 - CSV export of the filtered view.
 - Proposing edits to itemkeys columns, or to several rows in one proposal.
-- Tracking changes to `support_remarks` or `display_name` between exports. Today only
+- Tracking changes to `ecw_remarks` or `display_name` between exports. Today only
   added/expired is tracked, though git history of `itemkeys.rpt` has the details.
 - A history view per key inside the app (for now it links to the closed proposal issues for
   that key on GitHub).
