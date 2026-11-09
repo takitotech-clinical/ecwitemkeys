@@ -1,0 +1,10 @@
+# Keeps workflow actions on their latest major versions (avoids runtime deprecation warnings).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ['*']
