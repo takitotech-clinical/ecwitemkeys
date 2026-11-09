@@ -1,6 +1,6 @@
-# eCW Item Keys Browser
+# ecw item keys Browser
 
-A fast, searchable table of eCW item keys joined with
+A fast, searchable table of ecw item keys joined with
 community-maintained descriptions and categories. It works on desktop and mobile, with a discussion thread per key and maintainer-approved edits.
 
 **Site:** https://ecwitemkeys.takitotech.com/

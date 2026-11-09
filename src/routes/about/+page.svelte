@@ -3,12 +3,12 @@
 	import { resolve } from '$app/paths';
 </script>
 
-<svelte:head><title>About · eCW Item Keys</title></svelte:head>
+<svelte:head><title>about · ecw item keys · takitotech</title></svelte:head>
 
 <div class="page prose">
 	<h1>About</h1>
 	<p class="lead">
-		A fast, searchable table of eCW item keys joined with community-maintained descriptions and
+		A fast, searchable table of ecw item keys joined with community-maintained descriptions and
 		categories. It works on desktop and mobile, with a discussion thread per key and
 		maintainer-approved edits.
 	</p>

@@ -3,7 +3,7 @@
 	import { app } from '#lib/state/app.svelte.ts';
 </script>
 
-<svelte:head><title>Review · eCW Item Keys</title></svelte:head>
+<svelte:head><title>review · ecw item keys · takitotech</title></svelte:head>
 
 <div class="page">
 	<h1>Review proposals</h1>

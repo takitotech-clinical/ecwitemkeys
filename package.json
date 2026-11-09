@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "1.0.0",
 	"type": "module",
-	"description": "eCW Item Keys Browser",
+	"description": "ecw item keys Browser",
 	"license": "MIT",
 	"packageManager": "pnpm@12.16.1",
 	"scripts": {

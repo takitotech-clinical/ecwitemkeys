@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        This proposal was prepared by the eCW Item Keys app. Please don't edit the Proposal JSON by hand — a bot checks it, and a maintainer approves it before the data changes.
+        This proposal was prepared by the ecw item keys app. Please don't edit the Proposal JSON by hand — a bot checks it, and a maintainer approves it before the data changes.
   - type: input
     id: key
     attributes:

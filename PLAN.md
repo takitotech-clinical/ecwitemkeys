@@ -1,4 +1,4 @@
-# PLAN — eCW Item Keys Browser
+# PLAN — ecw item keys Browser
 
 The app joins the **itemkeys rpt**
 (exported from `mobiledoc.dbo.itemkeys`) with an app-managed **additional rpt**, and serves

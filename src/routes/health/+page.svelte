@@ -3,7 +3,7 @@
 	import { app } from '#lib/state/app.svelte.ts';
 </script>
 
-<svelte:head><title>Data health · eCW Item Keys</title></svelte:head>
+<svelte:head><title>data health · ecw item keys · takitotech</title></svelte:head>
 
 <div class="page">
 	{#if app.error}

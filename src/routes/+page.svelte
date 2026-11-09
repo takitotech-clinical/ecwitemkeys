@@ -166,7 +166,7 @@
 <svelte:window {onkeydown} />
 
 <svelte:head>
-	<title>{view.key !== null ? `${view.key} · ` : ''}eCW Item Keys</title>
+	<title>{view.key !== null ? `${view.key} · ` : ''}ecw item keys · takitotech</title>
 </svelte:head>
 
 {#if app.error}
@@ -189,7 +189,7 @@
 		</aside>
 
 		<section class="results" aria-label="Results">
-			<h1 class="sr-only">eCW item keys</h1>
+			<h1 class="sr-only">ecw item keys · takitotech</h1>
 			<div class="toolbar">
 				<SearchBar bind:value={qInput} bind:input={searchInput} />
 				<button class="btn filters-btn" onclick={() => (filtersOpen = true)}>
