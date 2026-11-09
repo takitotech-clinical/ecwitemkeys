@@ -38,7 +38,13 @@
 <div class="shell">
 	<header>
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
-		<a class="brand" href="https://takitotech.com" target="_blank" rel="noopener" aria-label="takitotech.com (opens in a new tab)">
+		<a
+			class="brand"
+			href="https://takitotech.com"
+			target="_blank"
+			rel="noopener"
+			aria-label="takitotech.com (opens in a new tab)"
+		>
 			<img src={takitotechLogo} alt="" width="28" height="28" />
 			<span class="wordmark">takito<span class="tech">tech</span></span>
 		</a>
