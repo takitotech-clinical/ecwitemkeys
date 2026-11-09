@@ -49,7 +49,10 @@
 			<span class="wordmark">takito<span class="tech">tech</span></span>
 		</a>
 		<span class="slash" aria-hidden="true">/</span>
-		<a class="page-name" href={resolve('/')}>ecw item keys</a>
+		<a class="page-name" href={resolve('/')}>
+			<img src={favicon} alt="" width="18" height="18" />
+			ecw item keys
+		</a>
 		<nav aria-label="Main">
 			{#each nav as n (n.id)}
 				<a href={n.href} aria-current={page.route.id === n.id ? 'page' : undefined}>{n.label}</a>
@@ -124,10 +127,16 @@
 		font-size: 19px;
 	}
 	.page-name {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 		font-family: var(--mono);
 		font-size: 15px;
 		color: var(--fg-muted);
 		text-decoration: none;
+	}
+	.page-name img {
+		display: block;
 	}
 	.page-name:hover {
 		color: var(--accent);
