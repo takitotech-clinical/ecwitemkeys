@@ -8,9 +8,9 @@
 <div class="page prose">
 	<h1>About</h1>
 	<p class="lead">
-		This site lists every eCW item key from <span class="mono">mobiledoc.dbo.itemkeys</span>, joined
-		with community-maintained descriptions and categories. Search, filter and share links to any
-		key; discuss a key; and propose better descriptions.
+		A fast, searchable table of eCW item keys joined with community-maintained descriptions and
+		categories. It works on desktop and mobile, with a discussion thread per key and
+		maintainer-approved edits.
 	</p>
 
 	<h2>Searching</h2>
