@@ -49,7 +49,7 @@
 			<span class="wordmark">takito<span class="tech">tech</span></span>
 		</a>
 		<span class="slash" aria-hidden="true">/</span>
-		<a class="page-name" href={resolve('/')}>ecwitemkeys</a>
+		<a class="page-name" href={resolve('/')}>ecw item keys</a>
 		<nav aria-label="Main">
 			{#each nav as n (n.id)}
 				<a href={n.href} aria-current={page.route.id === n.id ? 'page' : undefined}>{n.label}</a>
