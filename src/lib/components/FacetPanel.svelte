@@ -32,7 +32,7 @@
 						checked={sel.includes(v.value)}
 						onchange={() => ontoggle(f.id, v.value)}
 					/>
-					<span class="label">{v.label}</span>
+					<span class="label" title={v.label}>{v.label}</span>
 					<span class="count">{n.toLocaleString()}</span>
 				</label>
 			{/each}
@@ -55,6 +55,8 @@
 		border: 0;
 		padding: 0;
 		margin: 0;
+		/* Fieldsets default to min-content width, which would let long labels widen the sidebar. */
+		min-width: 0;
 	}
 	legend {
 		font-weight: 600;
@@ -80,6 +82,7 @@
 	}
 	.label {
 		flex: 1;
+		min-width: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;

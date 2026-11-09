@@ -1,8 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
-	import { MediaQuery } from 'svelte/reactivity';
 	import CardList from '#lib/components/CardList.svelte';
 	import ChangesSummary from '#lib/components/ChangesSummary.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
@@ -19,6 +15,10 @@
 	import { app } from '#lib/state/app.svelte.ts';
 	import { readPref, writePref } from '#lib/state/prefs.ts';
 	import { parseViewState, viewStateToSearch, type ViewState } from '#lib/state/url-state.ts';
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+	import { MediaQuery } from 'svelte/reactivity';
 
 	const wide = new MediaQuery('min-width: 900px');
 	const ds = $derived(app.ds);
