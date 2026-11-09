@@ -71,14 +71,6 @@
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
 		Source and history: <a href={REPO_URL}>{REPO_URL.replace('https://', '')}</a>.
 	</p>
-
-	<h2 id="disclaimer">Disclaimer</h2>
-	<p class="disclaimer tk-card current">
-		TakitoTech does not own, does not claim to own, and is not responsible for the community
-		contributed content. All data are contributed by community members and were not officially
-		provided by eClinicalWorks. Always validate the item key and its functionality with
-		eClinicalWorks before activating it.
-	</p>
 </div>
 
 <style>

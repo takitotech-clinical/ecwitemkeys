@@ -2,8 +2,8 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import takitotechLogo from '#lib/assets/takitotech.svg';
 	import ThemeToggle from '#lib/components/ThemeToggle.svelte';
-	import { theme } from '#lib/state/theme.svelte.ts';
 	import { app } from '#lib/state/app.svelte.ts';
+	import { theme } from '#lib/state/theme.svelte.ts';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import '../app.css';
@@ -67,10 +67,10 @@
 	</main>
 	<footer bind:offsetHeight={footerHeight}>
 		<p class="disclaimer">
-			TakitoTech does not own, does not claim to own, and is not responsible for the community
-			contributed content. All data are contributed by community members and were not officially
-			provided by eClinicalWorks. Always validate the item key and its functionality with
-			eClinicalWorks before activating it. <a href="{resolve('/about')}#disclaimer">Details</a>
+			This information is shared for informational purposes only and does not imply any transfer of
+			ownership, license, or endorsement. TakitoTech is not responsible for the community
+			contributed content. Always validate the item key and its functionality with eClinicalWorks
+			before activating it.
 		</p>
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
 		<a class="brandlink" href="https://takitotech.com" target="_blank" rel="noopener">

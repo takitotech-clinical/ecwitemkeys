@@ -165,7 +165,10 @@ pnpm lint && pnpm check
 
 ## Disclaimer
 
-TakitoTech does not own, does not claim to own, and is not responsible for the community contributed content. All data are contributed by community members and were not officially provided by eClinicalWorks. Always validate the item key and its functionality with eClinicalWorks before activating it.
+This information is shared for informational purposes only and does not imply any transfer of
+ownership, license, or endorsement. TakitoTech is not responsible for the community contributed
+content. Always validate the item key and its functionality with eClinicalWorks before
+activating it.
 
 ## License
 
