@@ -34,17 +34,24 @@
 	} = $props();
 
 	const ROW = 58;
-	const WIDTHS: Record<string, string> = {
-		key: 'minmax(220px, 1.3fr)',
-		display_name: 'minmax(160px, 1fr)',
-		ecw_remarks: 'minmax(240px, 2fr)',
-		description: 'minmax(220px, 1.6fr)',
-		category: '96px',
-		added: '112px',
-		expired: '112px'
+	// [minimum px, flex share]; no share = fixed width. The default columns' minimums fit the
+	// results pane at the 900 px breakpoint (~627 px, less a classic scrollbar), so it only
+	// scrolls sideways once extra columns are turned on.
+	const WIDTHS: Record<string, [number, number?]> = {
+		key: [200, 1.3],
+		display_name: [140, 1],
+		ecw_remarks: [160, 2],
+		description: [130, 1.6],
+		rank: [110, 0.8],
+		category: [96],
+		added: [112],
+		expired: [112]
 	};
-	const template = $derived(columns.map((c) => WIDTHS[c.id] ?? 'minmax(140px, 1fr)').join(' '));
-	const minWidth = $derived(`${columns.length * 150}px`);
+	const widths = $derived(columns.map((c) => WIDTHS[c.id] ?? [120, 1]));
+	const template = $derived(
+		widths.map(([min, fr]) => (fr ? `minmax(${min}px, ${fr}fr)` : `${min}px`)).join(' ')
+	);
+	const minWidth = $derived(`${widths.reduce((sum, [min]) => sum + min, 0)}px`);
 
 	let list: VirtualList | undefined = $state();
 	export const scrollToIndex = (i: number) => list?.scrollToIndex(i);
