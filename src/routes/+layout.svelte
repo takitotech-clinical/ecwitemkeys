@@ -38,7 +38,7 @@
 <div class="shell">
 	<header>
 		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external link -->
-		<a class="brand" href="https://takitotech.com" aria-label="takitotech.com">
+		<a class="brand" href="https://takitotech.com" target="_blank" rel="noopener" aria-label="takitotech.com (opens in a new tab)">
 			<img src={takitotechLogo} alt="" width="28" height="28" />
 			<span class="wordmark">takito<span class="tech">tech</span></span>
 		</a>
@@ -71,8 +71,6 @@
 			<span class="powered">Powered by</span>
 			<img src={takitotechLogo} alt="" width="22" height="22" />
 			<span class="wordmark">takito<span class="tech">tech</span></span>
-			<span class="sep" aria-hidden="true">·</span>
-			<span class="domain">takitotech.com</span>
 		</a>
 	</footer>
 </div>
@@ -224,20 +222,11 @@
 		background: var(--tint-hover);
 		color: var(--fg-muted);
 	}
-	.brandlink:hover .domain {
-		text-decoration: underline;
-	}
 	.brandlink img {
 		display: block;
 	}
 	.brandlink .wordmark {
 		font-size: 15px;
-	}
-	.sep {
-		color: var(--fg-faint);
-	}
-	.domain {
-		color: var(--accent);
 	}
 	@media (max-width: 380px) {
 		footer {
